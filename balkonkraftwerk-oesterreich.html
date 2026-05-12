@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balkonkraftwerk Österreich 2026 – Test, Vergleich & Förderung</title>
+<meta name="description" content="Die besten Balkonkraftwerke für Österreich 2026 im Test. Förderinfos für Wien, Niederösterreich, Steiermark & Co. Unabhängige Kaufberatung.">
+<link rel="canonical" href="https://www.photovoltaik-tipp.de/balkonkraftwerk-oesterreich.html">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0F1923;
+  --ink-soft: #3D4D5C;
+  --ink-muted: #6E8090;
+  --sun: #F59E0B;
+  --sun-hover: #D97706;
+  --sun-light: #FFFBEB;
+  --sun-pale: #FEF3C7;
+  --sky: #0369A1;
+  --sky-dark: #0C4A6E;
+  --sky-light: #E0F2FE;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --red: #DC2626;
+  --bg: #F8F9FA;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 1px 3px rgba(15,25,35,0.08);
+  --shadow-md: 0 4px 16px rgba(15,25,35,0.10), 0 2px 6px rgba(15,25,35,0.06);
+  --shadow-lg: 0 12px 40px rgba(15,25,35,0.13), 0 4px 12px rgba(15,25,35,0.07);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse-sun { 0%,100% { box-shadow:0 0 0 0 rgba(245,158,11,0.4); } 50% { box-shadow:0 0 0 14px rgba(245,158,11,0); } }
+
+/* NAV */
+nav { position:sticky; top:0; z-index:200; background:rgba(255,255,255,0.93); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:1140px; margin:0 auto; padding:0 1.5rem; height:68px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+.logo-mark { width:36px; height:36px; background:var(--sun); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; animation:pulse-sun 3s ease-in-out infinite; }
+.logo-text { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--ink); line-height:1.2; }
+.logo-text span { color:var(--sun); }
+.logo-sub { font-size:0.65rem; color:var(--ink-muted); font-weight:400; letter-spacing:0.04em; }
+.nav-links { display:flex; align-items:center; gap:0.2rem; list-style:none; }
+.nav-links a { text-decoration:none; color:var(--ink-soft); font-size:0.875rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:8px; transition:background 0.15s,color 0.15s; }
+.nav-links a:hover { background:var(--sky-light); color:var(--sky); }
+.nav-cta { background:var(--sun); color:var(--white); padding:0.6rem 1.25rem; border-radius:10px; font-size:0.875rem; font-weight:700; text-decoration:none; transition:background 0.2s,transform 0.15s; white-space:nowrap; }
+.nav-cta:hover { background:var(--sun-hover); transform:translateY(-1px); }
+
+/* HERO */
+.hero { background:var(--sky-dark); position:relative; overflow:hidden; padding:5rem 1.5rem 4rem; }
+.hero-bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:48px 48px; }
+.hero-glow { position:absolute; top:-120px; right:-120px; width:500px; height:500px; background:radial-gradient(circle,rgba(245,158,11,0.22) 0%,transparent 65%); pointer-events:none; }
+.hero-inner { max-width:900px; margin:0 auto; position:relative; z-index:1; animation:fadeUp 0.6s ease both; }
+.hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.35); color:#FCD34D; font-size:0.78rem; font-weight:600; padding:0.35rem 1rem; border-radius:50px; margin-bottom:1.5rem; letter-spacing:0.06em; text-transform:uppercase; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); line-height:1.2; color:var(--white); margin-bottom:1.25rem; }
+.hero h1 em { font-style:normal; color:var(--sun); }
+.hero-lead { font-size:1.05rem; color:rgba(255,255,255,0.78); line-height:1.75; margin-bottom:2rem; max-width:680px; }
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }
+.btn-sun { background:var(--sun); color:var(--ink); padding:0.85rem 1.75rem; border-radius:12px; font-weight:700; font-size:0.95rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:background 0.2s,transform 0.15s; box-shadow:0 4px 14px rgba(245,158,11,0.4); }
+.btn-sun:hover { background:var(--sun-hover); transform:translateY(-2px); }
+.btn-outline-white { background:rgba(255,255,255,0.1); border:1.5px solid rgba(255,255,255,0.28); color:white; padding:0.85rem 1.75rem; border-radius:12px; font-weight:500; font-size:0.95rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:background 0.2s; }
+.hero-trust { display:flex; gap:1.5rem; flex-wrap:wrap; }
+.hero-trust-item { display:flex; align-items:center; gap:6px; color:rgba(255,255,255,0.65); font-size:0.82rem; }
+
+/* SECTIONS */
+.section { padding:5rem 1.5rem; }
+.section-inner { max-width:1140px; margin:0 auto; }
+.section-label { display:inline-block; background:var(--sky-light); color:var(--sky); font-size:0.72rem; font-weight:700; padding:0.3rem 0.9rem; border-radius:50px; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.75rem; }
+.section h2 { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.2rem); color:var(--ink); margin-bottom:0.75rem; }
+.section-lead { color:var(--ink-muted); font-size:1rem; max-width:640px; margin-bottom:3rem; }
+
+/* PRODUCT CARDS */
+.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.product-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; transition:box-shadow 0.2s,transform 0.2s; }
+.product-card:hover { box-shadow:var(--shadow-md); transform:translateY(-4px); }
+.product-card.featured { border-color:var(--sun); box-shadow:0 0 0 2px rgba(245,158,11,0.2); }
+.product-badge { background:var(--sun); color:var(--ink); font-size:0.72rem; font-weight:700; padding:0.3rem 0.9rem; text-transform:uppercase; letter-spacing:0.07em; text-align:center; }
+.product-thumb { height:160px; display:flex; align-items:center; justify-content:center; font-size:4rem; background:linear-gradient(135deg,#FEF3C7,#FDE68A); }
+.product-body { padding:1.5rem; }
+.product-body h3 { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:0.5rem; }
+.product-price { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--sky-dark); font-weight:700; margin-bottom:1rem; }
+.product-price span { font-size:0.85rem; color:var(--ink-muted); font-family:'Sora',sans-serif; font-weight:400; }
+.product-features { list-style:none; margin-bottom:1.25rem; }
+.product-features li { font-size:0.85rem; color:var(--ink-soft); padding:0.3rem 0; display:flex; align-items:center; gap:8px; }
+.product-features li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
+.product-btn { display:block; text-align:center; background:var(--sky-dark); color:white; padding:0.75rem; border-radius:10px; font-weight:700; font-size:0.9rem; text-decoration:none; transition:background 0.2s; }
+.product-btn:hover { background:var(--sky); }
+.product-btn.sun { background:var(--sun); color:var(--ink); }
+.product-btn.sun:hover { background:var(--sun-hover); }
+.affiliate-note { font-size:0.72rem; color:var(--ink-muted); text-align:center; margin-top:0.5rem; }
+
+/* FOERDERUNG */
+.foerderung-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+.foerderung-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem; }
+.foerderung-card h3 { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:0.5rem; display:flex; align-items:center; gap:8px; }
+.foerderung-card p { font-size:0.875rem; color:var(--ink-muted); line-height:1.65; margin-bottom:1rem; }
+.foerderung-amount { font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--green); font-weight:700; margin-bottom:0.25rem; }
+.foerderung-label { font-size:0.78rem; color:var(--ink-muted); }
+.foerderung-link { display:inline-flex; align-items:center; gap:6px; color:var(--sky); font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:0.75rem; }
+.foerderung-link:hover { text-decoration:underline; }
+
+/* FAQ */
+.faq-list { max-width:760px; }
+.faq-item { border:1.5px solid var(--border); border-radius:var(--radius); margin-bottom:0.75rem; overflow:hidden; background:var(--white); }
+.faq-q { padding:1.25rem 1.5rem; display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:1rem; font-weight:600; font-size:0.95rem; color:var(--ink); user-select:none; transition:background 0.15s; }
+.faq-q:hover { background:var(--bg); }
+.faq-icon { width:28px; height:28px; flex-shrink:0; border:1.5px solid var(--border-strong); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--ink-muted); transition:transform 0.25s,background 0.2s; }
+.faq-item.open .faq-icon { transform:rotate(45deg); background:var(--sun); border-color:var(--sun); color:white; }
+.faq-a { max-height:0; overflow:hidden; transition:max-height 0.35s ease,padding 0.25s; padding:0 1.5rem; font-size:0.9rem; color:var(--ink-soft); line-height:1.75; }
+.faq-item.open .faq-a { max-height:400px; padding:0 1.5rem 1.25rem; }
+
+/* INFO BOXES */
+.info-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-bottom:3rem; }
+.info-box { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem; }
+.info-box h3 { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:0.75rem; display:flex; align-items:center; gap:8px; }
+.info-box p { font-size:0.875rem; color:var(--ink-muted); line-height:1.65; }
+.info-box ul { list-style:none; }
+.info-box ul li { font-size:0.875rem; color:var(--ink-soft); padding:0.3rem 0; display:flex; align-items:flex-start; gap:8px; }
+.info-box ul li::before { content:'→'; color:var(--sun); font-weight:700; flex-shrink:0; margin-top:2px; }
+
+/* NEWSLETTER */
+.newsletter-wrap { background:linear-gradient(135deg,var(--sky-dark),#1A5276); border-radius:var(--radius-xl); padding:3.5rem; text-align:center; position:relative; overflow:hidden; }
+.newsletter-wrap::before { content:''; position:absolute; top:-60px; right:-60px; width:280px; height:280px; background:radial-gradient(circle,rgba(245,158,11,0.2) 0%,transparent 70%); }
+.newsletter-wrap h2 { font-family:'Playfair Display',serif; font-size:2rem; color:white; margin-bottom:0.5rem; position:relative; z-index:1; }
+.newsletter-wrap p { color:rgba(255,255,255,0.72); margin-bottom:2rem; font-size:1rem; position:relative; z-index:1; }
+.nl-btn-link { display:inline-block; background:var(--sun); color:var(--ink); padding:0.85rem 2rem; border-radius:12px; font-weight:700; font-size:0.95rem; text-decoration:none; transition:background 0.2s; position:relative; z-index:1; }
+.nl-btn-link:hover { background:var(--sun-hover); }
+
+/* FOOTER */
+footer { background:var(--ink); color:rgba(255,255,255,0.6); padding:4rem 1.5rem 2rem; }
+.footer-grid { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:2rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+.footer-brand p { font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.7; margin-top:0.75rem; max-width:260px; }
+.footer-affiliate-note { font-size:0.75rem; color:rgba(255,255,255,0.35); border-left:2px solid rgba(245,158,11,0.4); padding-left:0.75rem; margin-top:1rem; line-height:1.6; }
+.footer-col h4 { color:white; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem; }
+.footer-col ul { list-style:none; }
+.footer-col li { margin-bottom:0.5rem; }
+.footer-col a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.875rem; transition:color 0.2s; }
+.footer-col a:hover { color:var(--sun); }
+.footer-bottom { max-width:1140px; margin:0 auto; padding-top:1.5rem; display:flex; justify-content:space-between; font-size:0.78rem; color:rgba(255,255,255,0.3); flex-wrap:wrap; gap:0.5rem; }
+
+@media(max-width:900px) {
+  .product-grid { grid-template-columns:1fr 1fr; }
+  .foerderung-grid { grid-template-columns:1fr 1fr; }
+  .info-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:640px) {
+  .nav-links { display:none; }
+  .product-grid { grid-template-columns:1fr; }
+  .foerderung-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">☀</div>
+      <div>
+        <div class="logo-text">photovoltaik<span>-tipp</span>.de</div>
+        <div class="logo-sub">Unabhängiger Ratgeber</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#vergleich">Vergleich</a></li>
+      <li><a href="index.html#foerderung">Förderung</a></li>
+      <li><a href="index.html#ratgeber">Ratgeber</a></li>
+      <li><a href="index.html#rechner">Sparrechner</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="newsletter.html">📬 Newsletter</a></li>
+    </ul>
+    <a href="index.html#vergleich" class="nav-cta">Testsieger →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">🇦🇹 Österreich-Ratgeber 2026</div>
+    <h1>Balkonkraftwerk <em>Österreich</em> – die besten Modelle im Vergleich</h1>
+    <p class="hero-lead">Unabhängige Tests, aktuelle Förderungen in allen Bundesländern und ehrliche Kaufberatung für österreichische Haushalte – damit du keine 500 € zu viel bezahlst.</p>
+    <div class="hero-actions">
+      <a href="#vergleich" class="btn-sun">Zum Vergleich 2026 →</a>
+      <a href="#foerderung" class="btn-outline-white">🏛️ Förderungen in AT</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">✓ Unabhängig getestet</div>
+      <div class="hero-trust-item">✓ Österreich-spezifische Förderinfos</div>
+      <div class="hero-trust-item">✓ Laufend aktualisiert</div>
+    </div>
+  </div>
+</section>
+
+<!-- VERGLEICH -->
+<section class="section" id="vergleich" style="background:var(--white);">
+  <div class="section-inner">
+    <span class="section-label">Testsieger 2026</span>
+    <h2>Die besten Balkonkraftwerke für Österreich</h2>
+    <p class="section-lead">Diese Modelle liefern das beste Preis-Leistungs-Verhältnis für österreichische Haushalte – geprüft und unabhängig bewertet.</p>
+
+    <div class="product-grid">
+      <!-- Testsieger -->
+      <div class="product-card featured">
+        <div class="product-badge">🏆 Testsieger</div>
+        <div class="product-thumb">⚡</div>
+        <div class="product-body">
+          <h3>Hoymiles HMS-800W-2T Set</h3>
+          <div class="product-price">ab 349 € <span>inkl. Versand nach AT</span></div>
+          <ul class="product-features">
+            <li>800 W Leistung – Plug & Play</li>
+            <li>Hoymiles HM-800 Wechselrichter</li>
+            <li>WLAN-Monitoring inklusive</li>
+            <li>Lieferung nach Österreich</li>
+            <li>5 Jahre Garantie</li>
+          </ul>
+          <a href="index.html#vergleich" class="product-btn sun">Zum besten Preis →</a>
+          <p class="affiliate-note">* Partnerlink – für dich kein Mehrpreis</p>
+        </div>
+      </div>
+
+      <!-- Platz 2 -->
+      <div class="product-card">
+        <div class="product-thumb">☀</div>
+        <div class="product-body">
+          <h3>Zendure SolarFlow 800W Set</h3>
+          <div class="product-price">ab 459 € <span>inkl. Speicher</span></div>
+          <ul class="product-features">
+            <li>800 W + 960 Wh Speicher</li>
+            <li>Auch nachts Strom nutzen</li>
+            <li>App-Steuerung</li>
+            <li>Versand nach Österreich</li>
+          </ul>
+          <a href="index.html#vergleich" class="product-btn">Mehr erfahren →</a>
+          <p class="affiliate-note">* Partnerlink – für dich kein Mehrpreis</p>
+        </div>
+      </div>
+
+      <!-- Platz 3 -->
+      <div class="product-card">
+        <div class="product-thumb">🔋</div>
+        <div class="product-body">
+          <h3>Anker SOLIX RS40P Set</h3>
+          <div class="product-price">ab 299 € <span>Einsteigermodell</span></div>
+          <ul class="product-features">
+            <li>400 W – ideal für Einsteiger</li>
+            <li>Kompaktes Design</li>
+            <li>Einfache Montage</li>
+            <li>Lieferung nach Österreich</li>
+          </ul>
+          <a href="index.html#vergleich" class="product-btn">Mehr erfahren →</a>
+          <p class="affiliate-note">* Partnerlink – für dich kein Mehrpreis</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WICHTIGE INFOS -->
+<section class="section" style="background:var(--bg);">
+  <div class="section-inner">
+    <span class="section-label">Wichtig für Österreich</span>
+    <h2>Was du in Österreich beachten musst</h2>
+    <p class="section-lead">Österreich hat eigene Regelungen für Balkonkraftwerke – hier die wichtigsten Infos auf einen Blick.</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>⚡ Gesetzliche Regelungen</h3>
+        <p>In Österreich gilt seit 2024 eine einheitliche Regelung für Balkonkraftwerke:</p>
+        <ul>
+          <li>Maximale Leistung: 800 Watt</li>
+          <li>Anmeldung beim Netzbetreiber erforderlich</li>
+          <li>Zweirichtungszähler empfohlen</li>
+          <li>Keine Genehmigung für Mieter nötig (seit 2024)</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>🏠 Für Mieter in Österreich</h3>
+        <p>Gute Neuigkeiten für Mieter in Österreich:</p>
+        <ul>
+          <li>Balkonkraftwerke bis 800W erlaubt ohne Genehmigung</li>
+          <li>Vermieter darf nicht pauschal verbieten</li>
+          <li>Schriftliche Mitteilung an Vermieter empfohlen</li>
+          <li>Keine baulichen Veränderungen nötig</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>📋 Anmeldung & Bürokratie</h3>
+        <p>So läuft die Anmeldung in Österreich ab:</p>
+        <ul>
+          <li>Online-Anmeldung beim Netzbetreiber (z.B. Wien Energie)</li>
+          <li>Kosten: meist kostenlos oder gering</li>
+          <li>Dauer: 2–4 Wochen</li>
+          <li>Formulare auf der Website des Netzbetreibers</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>💰 Einspeisevergütung</h3>
+        <p>Was passiert mit überschüssigem Strom?</p>
+        <ul>
+          <li>Einspeisung ins Netz möglich</li>
+          <li>Vergütung je nach Bundesland verschieden</li>
+          <li>Eigenverbrauch ist deutlich rentabler</li>
+          <li>Mit Speicher: bis zu 80% Eigenverbrauch möglich</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FÖRDERUNG -->
+<section class="section" id="foerderung" style="background:var(--white);">
+  <div class="section-inner">
+    <span class="section-label">Förderungen 2026</span>
+    <h2>Balkonkraftwerk Förderung in Österreich</h2>
+    <p class="section-lead">Viele österreichische Bundesländer und Gemeinden fördern Balkonkraftwerke. Hier die aktuellen Programme.</p>
+
+    <div class="foerderung-grid">
+      <div class="foerderung-card">
+        <h3>🏙️ Wien</h3>
+        <div class="foerderung-amount">bis zu 200 €</div>
+        <div class="foerderung-label">Förderung pro Anlage</div>
+        <p>Wien fördert Balkonkraftwerke über das Klimaschutzprogramm der Stadt Wien.</p>
+        <a href="balkonkraftwerk-foerderung-oesterreich-2026.html" class="foerderung-link">Details zur Wiener Förderung →</a>
+      </div>
+      <div class="foerderung-card">
+        <h3>🌿 Niederösterreich</h3>
+        <div class="foerderung-amount">bis zu 150 €</div>
+        <div class="foerderung-label">Landesförderung</div>
+        <p>Niederösterreich bietet Förderungen für erneuerbare Energien im Haushalt.</p>
+        <a href="balkonkraftwerk-foerderung-oesterreich-2026.html" class="foerderung-link">Alle NÖ Förderungen →</a>
+      </div>
+      <div class="foerderung-card">
+        <h3>🏔️ Steiermark</h3>
+        <div class="foerderung-amount">bis zu 200 €</div>
+        <div class="foerderung-label">Landesförderung</div>
+        <p>Die Steiermark unterstützt Photovoltaik-Anlagen aller Größen.</p>
+        <a href="balkonkraftwerk-foerderung-oesterreich-2026.html" class="foerderung-link">Steiermark Förderung →</a>
+      </div>
+      <div class="foerderung-card">
+        <h3>🏡 Oberösterreich</h3>
+        <div class="foerderung-amount">bis zu 100 €</div>
+        <div class="foerderung-label">Gemeindeförderung</div>
+        <p>Viele oberösterreichische Gemeinden bieten zusätzliche Förderungen.</p>
+        <a href="balkonkraftwerk-foerderung-oesterreich-2026.html" class="foerderung-link">OÖ Förderungen →</a>
+      </div>
+      <div class="foerderung-card">
+        <h3>🌊 Tirol</h3>
+        <div class="foerderung-amount">bis zu 200 €</div>
+        <div class="foerderung-label">Landesförderung</div>
+        <p>Tirol fördert Balkonkraftwerke als Teil der Energiewende-Strategie.</p>
+        <a href="balkonkraftwerk-foerderung-oesterreich-2026.html" class="foerderung-link">Tirol Förderung →</a>
+      </div>
+      <div class="foerderung-card">
+        <h3>🇦🇹 Bundesförderung</h3>
+        <div class="foerderung-amount">bis zu 200 €</div>
+        <div class="foerderung-label">Österreichweit</div>
+        <p>Zusätzlich zur Landesförderung gibt es österreichweite Bundesförderungen.</p>
+        <a href="balkonkraftwerk-foerderung-oesterreich-2026.html" class="foerderung-link">Alle Bundesförderungen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--bg);">
+  <div class="section-inner">
+    <span class="section-label">Häufige Fragen</span>
+    <h2>FAQ: Balkonkraftwerk in Österreich</h2>
+    <p class="section-lead">Die häufigsten Fragen rund um Balkonkraftwerke in Österreich – klar und verständlich beantwortet.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Brauche ich eine Genehmigung für ein Balkonkraftwerk in Österreich?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Seit 2024 ist in Österreich keine Baugenehmigung für Balkonkraftwerke bis 800 Watt erforderlich. Du musst lediglich eine Anmeldung beim zuständigen Netzbetreiber durchführen. Das geht meist online und ist kostenlos oder sehr günstig.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Wie viel spare ich mit einem Balkonkraftwerk in Österreich?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Bei einem durchschnittlichen Strompreis von etwa 25 Cent/kWh in Österreich und einer 800W-Anlage kannst du pro Jahr zwischen 200 und 400 Euro sparen. Die genaue Ersparnis hängt von deinem Verbrauch, dem Standort und der Ausrichtung ab. Die Amortisation liegt typischerweise bei 3–5 Jahren.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Welches Balkonkraftwerk ist in Österreich am beliebtesten?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Das Hoymiles HMS-800W-2T Set ist derzeit das beliebteste Modell in Österreich. Es bietet ein gutes Preis-Leistungs-Verhältnis, ist einfach zu installieren und wird direkt nach Österreich geliefert. Für Nutzer mit Interesse an Speicher ist das Zendure SolarFlow Set eine ausgezeichnete Wahl.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Darf mein Vermieter ein Balkonkraftwerk in Österreich verbieten?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Nein, seit der Gesetzesänderung 2024 darf ein Vermieter Balkonkraftwerke in Österreich nicht pauschal verbieten. Du solltest deinen Vermieter jedoch schriftlich informieren. Ein pauschales Verbot ist rechtlich nicht zulässig, solange keine baulichen Veränderungen vorgenommen werden.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Wie melde ich mein Balkonkraftwerk in Österreich an?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Die Anmeldung erfolgt direkt beim zuständigen Netzbetreiber in deiner Region (z.B. Wien Energie in Wien, Netz Oberösterreich in OÖ usw.). Die meisten Netzbetreiber bieten ein einfaches Online-Formular an. Die Anmeldung dauert 2–4 Wochen und ist meist kostenlos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="newsletter-wrap">
+      <h2>Keine Förderung in Österreich verpassen</h2>
+      <p>Neue Förderprogramme, Preissenkungen & Tests direkt in dein Postfach. Kostenlos, jederzeit abmeldbar.</p>
+      <a href="newsletter.html" class="nl-btn-link">📬 Jetzt kostenlos anmelden</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:0.75rem;">
+        <div class="logo-mark" style="animation:none;">☀</div>
+        <div class="logo-text" style="color:white;">photovoltaik<span>-tipp</span>.de</div>
+      </div>
+      <p>Unabhängiger Ratgeber für Balkonkraftwerke in Deutschland und Österreich. Ehrliche Tests, klar gekennzeichnete Partnerlinks – seit 2020.</p>
+      <div class="footer-affiliate-note">Affiliate-Hinweis: Gekennzeichnete Links sind Partnerlinks. Bei einem Kauf erhalten wir eine Provision – für dich entstehen keine Mehrkosten.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Vergleiche</h4>
+      <ul>
+        <li><a href="index.html#vergleich">Testsieger 2026</a></li>
+        <li><a href="balkonkraftwerk-kaufen-2026.html">Kaufberatung</a></li>
+        <li><a href="balkonkraftwerk-mit-speicher-2026.html">Mit Speicher</a></li>
+        <li><a href="balkonkraftwerk-mieter-2026.html">Für Mieter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Förderung</h4>
+      <ul>
+        <li><a href="balkonkraftwerk-foerderung-deutschland-2026.html">🇩🇪 Deutschland</a></li>
+        <li><a href="balkonkraftwerk-foerderung-oesterreich-2026.html">🇦🇹 Österreich</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum (2).html">Impressum</a></li>
+        <li><a href="impressum (2).html">Datenschutz</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 photovoltaik-tipp.de – Deutschland & Österreich</span>
+    <span>Mit ☀ für die Energiewende</span>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>

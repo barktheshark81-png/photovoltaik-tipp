@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter – Photovoltaik Tipp</title>
+<meta name="description" content="Melde dich für den Photovoltaik Tipp Newsletter an und erhalte neue Förderungen, Preissenkungen und Tests direkt in dein Postfach.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0F1923;
+  --ink-soft: #3D4D5C;
+  --ink-muted: #6E8090;
+  --sun: #F59E0B;
+  --sun-hover: #D97706;
+  --sun-light: #FFFBEB;
+  --sun-pale: #FEF3C7;
+  --sky: #0369A1;
+  --sky-dark: #0C4A6E;
+  --sky-light: #E0F2FE;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --bg: #F8F9FA;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 1px 3px rgba(15,25,35,0.08);
+  --shadow-md: 0 4px 16px rgba(15,25,35,0.10), 0 2px 6px rgba(15,25,35,0.06);
+  --shadow-lg: 0 12px 40px rgba(15,25,35,0.13), 0 4px 12px rgba(15,25,35,0.07);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+@keyframes pulse-sun { 0%,100% { box-shadow:0 0 0 0 rgba(245,158,11,0.4); } 50% { box-shadow:0 0 0 14px rgba(245,158,11,0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,255,255,0.93);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1140px; margin: 0 auto;
+  padding: 0 1.5rem; height: 68px;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+.logo-mark { width:36px; height:36px; background:var(--sun); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; animation:pulse-sun 3s ease-in-out infinite; }
+.logo-text { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--ink); line-height:1.2; }
+.logo-text span { color:var(--sun); }
+.logo-sub { font-size:0.65rem; font-family:'Sora',sans-serif; color:var(--ink-muted); font-weight:400; letter-spacing:0.04em; }
+.nav-links { display:flex; align-items:center; gap:0.2rem; list-style:none; }
+.nav-links a { text-decoration:none; color:var(--ink-soft); font-size:0.875rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:8px; transition:background 0.15s,color 0.15s; }
+.nav-links a:hover { background:var(--sky-light); color:var(--sky); }
+.nav-cta { background:var(--sun); color:var(--white); padding:0.6rem 1.25rem; border-radius:10px; font-size:0.875rem; font-weight:700; text-decoration:none; transition:background 0.2s,transform 0.15s; white-space:nowrap; }
+.nav-cta:hover { background:var(--sun-hover); transform:translateY(-1px); }
+
+/* HERO */
+.hero {
+  background: var(--sky-dark);
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:48px 48px; pointer-events:none; }
+.hero-glow { position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:600px; height:400px; background:radial-gradient(circle,rgba(245,158,11,0.2) 0%,transparent 65%); pointer-events:none; }
+.hero-inner { max-width:680px; margin:0 auto; position:relative; z-index:1; animation: fadeUp 0.6s ease both; }
+.hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.35); color:#FCD34D; font-size:0.78rem; font-weight:600; padding:0.35rem 1rem; border-radius:50px; margin-bottom:1.5rem; letter-spacing:0.06em; text-transform:uppercase; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,2.8rem); line-height:1.2; color:var(--white); margin-bottom:1.25rem; }
+.hero h1 em { font-style:normal; color:var(--sun); }
+.hero-lead { font-size:1.05rem; color:rgba(255,255,255,0.78); line-height:1.75; margin-bottom:2rem; }
+
+/* BENEFITS */
+.benefits { background:var(--white); padding:4rem 1.5rem; }
+.benefits-inner { max-width:900px; margin:0 auto; }
+.benefits-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+.benefit-card { background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem; text-align:center; }
+.benefit-icon { font-size:2.5rem; margin-bottom:1rem; }
+.benefit-card h3 { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:0.5rem; }
+.benefit-card p { font-size:0.875rem; color:var(--ink-muted); line-height:1.65; }
+
+/* FORM SECTION */
+.form-section { padding:4rem 1.5rem; }
+.form-section-inner { max-width:600px; margin:0 auto; }
+.form-card {
+  background: var(--sky-dark);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.form-card h2 { font-family:'Playfair Display',serif; font-size:1.75rem; color:white; margin-bottom:0.75rem; }
+.form-card p { color:rgba(255,255,255,0.75); font-size:0.95rem; margin-bottom:2rem; }
+
+/* Brevo form overrides */
+#sib-container { max-width:100% !important; background:rgba(255,255,255,0.1) !important; border:1.5px solid rgba(255,255,255,0.2) !important; border-radius:14px !important; }
+#sib-container label.entry__label { color:rgba(255,255,255,0.8) !important; font-size:0.85rem !important; }
+#sib-container input.input { background:rgba(255,255,255,0.1) !important; border:1.5px solid rgba(255,255,255,0.2) !important; color:white !important; border-radius:10px !important; padding:0.75rem 1rem !important; }
+#sib-container input.input::placeholder { color:rgba(255,255,255,0.45) !important; }
+#sib-container .sib-form-block__button { background:#F59E0B !important; color:#0C4A6E !important; border-radius:10px !important; width:100% !important; font-weight:700 !important; font-size:1rem !important; padding:0.85rem !important; }
+#sib-container .entry__specification { color:rgba(255,255,255,0.4) !important; font-size:0.75rem !important; }
+.sib-form { background:transparent !important; }
+.sib-form-block:first-child { display:none !important; }
+
+.dsgvo-note { font-size:0.78rem; color:rgba(255,255,255,0.45); margin-top:1.25rem; }
+.dsgvo-note a { color:rgba(255,255,255,0.65); }
+
+/* FOOTER */
+footer { background:var(--ink); color:rgba(255,255,255,0.65); padding:3rem 1.5rem 1.5rem; }
+.footer-grid { max-width:1140px; margin:0 auto 2rem; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:2.5rem; }
+.footer-brand p { font-size:0.85rem; line-height:1.7; margin-top:0.75rem; }
+.footer-col h4 { font-size:0.85rem; font-weight:700; color:white; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.06em; }
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:0.5rem; }
+.footer-col ul li a { text-decoration:none; color:rgba(255,255,255,0.55); font-size:0.85rem; transition:color 0.15s; }
+.footer-col ul li a:hover { color:var(--sun); }
+.footer-bottom { max-width:1140px; margin:0 auto; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; font-size:0.78rem; }
+
+@media(max-width:768px){
+  .benefits-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .form-card { padding:2rem 1.25rem; }
+  .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">☀</div>
+      <div>
+        <div class="logo-text">photovoltaik<span>-tipp</span>.de</div>
+        <div class="logo-sub">Unabhängiger Ratgeber</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#vergleich">Vergleich</a></li>
+      <li><a href="index.html#foerderung">Förderung</a></li>
+      <li><a href="index.html#rechner">Rechner</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html" class="nav-cta">← Zur Startseite</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">📬 Kostenloser Newsletter</div>
+    <h1>Immer auf dem neuesten Stand bei <em>Photovoltaik & Balkonkraftwerken</em></h1>
+    <p class="hero-lead">Neue Förderungen, Preissenkungen und unabhängige Tests für Deutschland & Österreich – direkt in deinen Posteingang. Kostenlos, jederzeit abmeldbar.</p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="benefits-inner">
+    <div style="text-align:center;margin-bottom:0.5rem;">
+      <span style="display:inline-block;background:var(--sky-light);color:var(--sky);font-size:0.72rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:50px;text-transform:uppercase;letter-spacing:0.07em;">Was dich erwartet</span>
+    </div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.75rem;text-align:center;margin-bottom:0.5rem;">Das bekommst du im Newsletter</h2>
+    <p style="text-align:center;color:var(--ink-muted);font-size:0.95rem;">Nur relevante Inhalte – kein Spam, versprochen.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h3>Förder-Updates</h3>
+        <p>Neue Förderprogramme in Deutschland und Österreich – sofort wenn sie verfügbar sind.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📉</div>
+        <h3>Preisalerts</h3>
+        <p>Wenn Top-Balkonkraftwerke im Preis fallen, erfährst du es als Erster.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔍</div>
+        <h3>Unabhängige Tests</h3>
+        <p>Ehrliche Testberichte und Vergleiche – ohne Einfluss von Herstellern.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section">
+  <div class="form-section-inner">
+    <div class="form-card">
+      <h2>Jetzt kostenlos anmelden</h2>
+      <p>Bereits über 1.000 Leser aus Deutschland & Österreich sind dabei.</p>
+
+      <iframe width="100%" height="520" src="https://c212e707.sibforms.com/serve/MUIFADJeo0N8K0SR0FoHi_ym_dVQ9WXFyYCcj86T7YATOXoQOXhq-qhV0KvqfrzdEcMDRpFfVOpyGAC6LN_cKbQ7vnUxJVhPaUQ0puQaV4OIvRkM4wBbn7GmBnDxaZQJcuoGgBmLs1_6QrYtaLmRy_lb-j0d1yP7FhKzDrZbe14plPUCK5Mp6byGf20BbutTo7acPxbwQV-qLJ9KAQ==" frameborder="0" scrolling="auto" allowfullscreen style="display:block;margin:0 auto;max-width:100%;border-radius:12px;"></iframe>
+                </div>
+              </div>
+              <div style="padding:8px 0;">
+                <div class="sib-form-block sib-form-block--html">
+                  <div class="sib-text-form-block">
+                    <p style="font-family:Helvetica,sans-serif;font-size:12px;color:rgba(255,255,255,0.5);text-align:left;">
+                      Mit der Anmeldung stimmst du zu, E-Mails von photovoltaik-tipp.de zu erhalten. Du kannst dich jederzeit abmelden.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div style="padding:8px 0;">
+                <div class="sib-form-block sib-optin sib-form-block--people">
+                  <div class="form__entry entry_mcq">
+                    <div class="form__label-row">
+                      <div class="entry__field">
+                        <div class="entry__option">
+                          <label class="entry__label entry__label--checkbox" style="font-family:Helvetica,sans-serif;font-size:12px;color:rgba(255,255,255,0.6);font-weight:400;">
+                            <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" />
+                            Ich stimme der <a href="impressum (2).html" style="color:rgba(255,255,255,0.8);">Datenschutzerklärung</a> zu.
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="padding:8px 0;">
+                <div class="sib-form-block sib-form-block--button">
+                  <div class="sib-form-block__button sib-form-block__button--centered">
+                    <button class="sib-form-block__button" form="sib-form" type="submit">
+                      Kostenlos anmelden ☀
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+              <input type="hidden" name="locale" value="de">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <p class="dsgvo-note">🔒 DSGVO-konform · Kein Spam · Jederzeit abmeldbar · <a href="impressum (2).html">Datenschutz</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="impressum">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:0.75rem;">
+        <div class="logo-mark" style="animation:none;">☀</div>
+        <div class="logo-text" style="color:white;">photovoltaik<span>-tipp</span>.de</div>
+      </div>
+      <p>Unabhängiger Ratgeber für Balkonkraftwerke in Deutschland und Österreich. Ehrliche Tests, klar gekennzeichnete Partnerlinks – seit 2020.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Vergleiche</h4>
+      <ul>
+        <li><a href="index.html#vergleich">Testsieger 2026</a></li>
+        <li><a href="balkonkraftwerk-kaufen-2026.html">Kaufberatung</a></li>
+        <li><a href="balkonkraftwerk-mit-speicher-2026.html">Mit Speicher</a></li>
+        <li><a href="balkonkraftwerk-mieter-2026.html">Für Mieter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Förderung</h4>
+      <ul>
+        <li><a href="balkonkraftwerk-foerderung-deutschland-2026.html">🇩🇪 Deutschland</a></li>
+        <li><a href="balkonkraftwerk-foerderung-oesterreich-2026.html">🇦🇹 Österreich</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum (2).html">Impressum</a></li>
+        <li><a href="impressum (2).html">Datenschutz</a></li>
+        <li><a href="#">Über uns</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 photovoltaik-tipp.de – Deutschland & Österreich</span>
+    <span>Mit ☀ für die Energiewende</span>
+  </div>
+</footer>
+
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Bitte wähle ein Land aus';
+  window.LOCALE = 'de';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die Informationen, die du angegeben hast, sind nicht gültig. Bitte überprüfe das Format und versuche es erneut.";
+  window.REQUIRED_ERROR_MESSAGE = "Dieses Feld muss ausgefüllt werden. ";
+  window.GENERIC_INVALID_MESSAGE = "Die Informationen, die du angegeben hast, sind nicht gültig. Bitte überprüfe das Format und versuche es erneut.";
+  window.translation = {
+    common: {
+      selectedList: '{quantity} Liste ausgewählt',
+      selectedLists: '{quantity} Listen ausgewählt'
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-point/build/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balkonkraftwerk 2026 – Test, Vergleich & Förderung | Deutschland & Österreich</title>
+<meta name="description" content="Die besten Balkonkraftwerke 2026 im unabhängigen Test. Förderinfos für Deutschland und Österreich, ehrliche Vergleiche & Kaufberatung.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0F1923;
+  --ink-soft: #3D4D5C;
+  --ink-muted: #6E8090;
+  --sun: #F59E0B;
+  --sun-hover: #D97706;
+  --sun-light: #FFFBEB;
+  --sun-pale: #FEF3C7;
+  --sky: #0369A1;
+  --sky-dark: #0C4A6E;
+  --sky-light: #E0F2FE;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --red: #DC2626;
+  --bg: #F8F9FA;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 1px 3px rgba(15,25,35,0.08);
+  --shadow-md: 0 4px 16px rgba(15,25,35,0.10), 0 2px 6px rgba(15,25,35,0.06);
+  --shadow-lg: 0 12px 40px rgba(15,25,35,0.13), 0 4px 12px rgba(15,25,35,0.07);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse-sun { 0%,100% { box-shadow:0 0 0 0 rgba(245,158,11,0.4); } 50% { box-shadow:0 0 0 14px rgba(245,158,11,0); } }
+@keyframes slideIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+.fade-up { animation: fadeUp 0.6s ease both; }
+.fade-up-1 { animation-delay:0.1s; }
+.fade-up-2 { animation-delay:0.22s; }
+.fade-up-3 { animation-delay:0.34s; }
+
+/* ── COUNTRY SWITCHER BAR ── */
+.country-bar {
+  background: var(--ink);
+  padding: 0.5rem 1.5rem;
+}
+.country-bar-inner {
+  max-width: 1140px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+}
+.country-bar-left {
+  font-size: 0.78rem; color: rgba(255,255,255,0.5);
+}
+.country-switcher {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px;
+  padding: 0.25rem;
+}
+.country-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; border: none;
+  background: transparent; color: rgba(255,255,255,0.55);
+  font-family: inherit;
+  transition: background 0.2s, color 0.2s;
+}
+.country-btn:hover { color: white; }
+.country-btn.active { background: var(--white); color: var(--ink); }
+.flag { font-size: 1rem; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,255,255,0.93);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1140px; margin: 0 auto;
+  padding: 0 1.5rem; height: 68px;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+.logo-mark { width:36px; height:36px; background:var(--sun); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; animation:pulse-sun 3s ease-in-out infinite; }
+.logo-text { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--ink); line-height:1.2; }
+.logo-text span { color:var(--sun); }
+.logo-sub { font-size:0.65rem; font-family:'Sora',sans-serif; color:var(--ink-muted); font-weight:400; letter-spacing:0.04em; }
+.nav-links { display:flex; align-items:center; gap:0.2rem; list-style:none; }
+.nav-links a { text-decoration:none; color:var(--ink-soft); font-size:0.875rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:8px; transition:background 0.15s,color 0.15s; }
+.nav-links a:hover { background:var(--sky-light); color:var(--sky); }
+.nav-cta { background:var(--sun); color:var(--white); padding:0.6rem 1.25rem; border-radius:10px; font-size:0.875rem; font-weight:700; text-decoration:none; transition:background 0.2s,transform 0.15s; white-space:nowrap; }
+.nav-cta:hover { background:var(--sun-hover); transform:translateY(-1px); }
+
+/* Country indicator in nav */
+.nav-country {
+  display:flex; align-items:center; gap:6px;
+  font-size:0.78rem; font-weight:600; color:var(--ink-muted);
+  background:var(--bg); border:1px solid var(--border);
+  padding:0.3rem 0.75rem; border-radius:50px;
+  cursor:pointer; transition:border-color 0.2s;
+}
+.nav-country:hover { border-color:var(--sun); }
+
+/* ── HERO ── */
+.hero { background:var(--sky-dark); position:relative; overflow:hidden; padding:5rem 1.5rem 4rem; }
+.hero-bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:48px 48px; }
+.hero-glow { position:absolute; top:-120px; right:-120px; width:500px; height:500px; background:radial-gradient(circle,rgba(245,158,11,0.22) 0%,transparent 65%); pointer-events:none; }
+.hero-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1fr 420px; gap:4rem; align-items:center; position:relative; z-index:1; }
+.hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.35); color:#FCD34D; font-size:0.78rem; font-weight:600; padding:0.35rem 1rem; border-radius:50px; margin-bottom:1.5rem; letter-spacing:0.06em; text-transform:uppercase; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.1rem); line-height:1.2; color:var(--white); margin-bottom:1.25rem; }
+.hero h1 em { font-style:normal; color:var(--sun); }
+.hero-lead { font-size:1.05rem; color:rgba(255,255,255,0.78); line-height:1.75; margin-bottom:2rem; max-width:520px; }
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+.btn-sun { background:var(--sun); color:var(--ink); padding:0.85rem 1.75rem; border-radius:12px; font-weight:700; font-size:0.95rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:background 0.2s,transform 0.15s,box-shadow 0.2s; box-shadow:0 4px 14px rgba(245,158,11,0.4); }
+.btn-sun:hover { background:var(--sun-hover); transform:translateY(-2px); }
+.btn-outline-white { background:rgba(255,255,255,0.1); border:1.5px solid rgba(255,255,255,0.28); color:white; padding:0.85rem 1.75rem; border-radius:12px; font-weight:500; font-size:0.95rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:background 0.2s; }
+.btn-outline-white:hover { background:rgba(255,255,255,0.18); }
+.hero-trust { display:flex; flex-wrap:wrap; gap:1.25rem; }
+.hero-trust-item { display:flex; align-items:center; gap:6px; color:rgba(255,255,255,0.65); font-size:0.82rem; }
+
+/* Hero product card */
+.hero-card { background:var(--white); border-radius:var(--radius-xl); padding:2rem; box-shadow:var(--shadow-lg); }
+.hero-card-badge { display:inline-flex; align-items:center; gap:6px; background:var(--sun-pale); color:var(--sun-hover); font-size:0.72rem; font-weight:700; padding:0.3rem 0.9rem; border-radius:50px; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.07em; }
+.hero-card-img { width:100%; height:170px; background:linear-gradient(135deg,#E0F2FE,#BAE6FD); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; font-size:5rem; margin-bottom:1.25rem; position:relative; overflow:hidden; }
+.solar-pulse { position:absolute; width:110px; height:110px; background:rgba(245,158,11,0.15); border-radius:50%; animation:pulse-sun 2s ease-in-out infinite; }
+.hero-card h3 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--ink); margin-bottom:0.5rem; }
+.hero-card-price { display:flex; align-items:baseline; gap:6px; margin-bottom:1rem; }
+.price-big { font-size:1.75rem; font-weight:700; color:var(--sky-dark); }
+.price-note { font-size:0.8rem; color:var(--ink-muted); }
+.hero-card-features { list-style:none; margin-bottom:1.25rem; }
+.hero-card-features li { font-size:0.85rem; color:var(--ink-soft); padding:0.3rem 0; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--border); }
+.hero-card-features li:last-child { border-bottom:none; }
+.check { color:var(--green); font-weight:700; }
+.btn-cta-full { display:block; text-align:center; background:var(--sun); color:var(--ink); padding:0.9rem; border-radius:12px; font-weight:700; font-size:0.95rem; text-decoration:none; transition:background 0.2s,transform 0.15s; box-shadow:0 3px 10px rgba(245,158,11,0.35); }
+.btn-cta-full:hover { background:var(--sun-hover); transform:translateY(-1px); }
+.affiliate-tag { text-align:center; font-size:0.72rem; color:var(--ink-muted); margin-top:0.6rem; }
+
+/* ── TRUST BAR ── */
+.trust-bar { background:var(--white); border-bottom:1px solid var(--border); padding:0.9rem 1.5rem; }
+.trust-bar-inner { max-width:1140px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:2rem; flex-wrap:wrap; font-size:0.82rem; color:var(--ink-soft); font-weight:500; }
+.trust-item { display:flex; align-items:center; gap:6px; }
+.trust-dot { width:5px; height:5px; background:var(--sun); border-radius:50%; }
+
+/* ── COUNTRY CONTENT TOGGLE ── */
+.country-section { display:none; animation:slideIn 0.35s ease; }
+.country-section.active { display:block; }
+
+/* ── FÖRDERUNG SECTION ── */
+.foerderung-bg { background:var(--white); padding:5rem 1.5rem; }
+.foerderung-inner { max-width:1140px; margin:0 auto; }
+.foerderung-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:2.5rem; }
+.foerderung-card { border:1.5px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem; background:var(--bg); transition:box-shadow 0.2s,transform 0.2s; }
+.foerderung-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); }
+.foerderung-card.highlight { border-color:var(--sun); background:var(--sun-light); }
+.foerderung-icon { font-size:2rem; margin-bottom:1rem; }
+.foerderung-card h3 { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:0.4rem; }
+.foerderung-card .amount { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--sky-dark); font-weight:700; margin-bottom:0.5rem; }
+.foerderung-card .amount.green { color:var(--green); }
+.foerderung-card p { font-size:0.85rem; color:var(--ink-muted); line-height:1.65; }
+.foerderung-card .btn-foerderung { display:inline-block; margin-top:1rem; background:var(--sky-dark); color:white; padding:0.55rem 1.1rem; border-radius:9px; font-size:0.82rem; font-weight:700; text-decoration:none; transition:background 0.2s; }
+.foerderung-card .btn-foerderung:hover { background:var(--sky); }
+.foerderung-note { font-size:0.8rem; color:var(--ink-muted); margin-top:1.5rem; line-height:1.65; border-left:3px solid var(--sun); padding-left:1rem; }
+
+/* ── SECTION BASE ── */
+.container { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
+.section { padding:5rem 1.5rem; }
+.section-tag { display:inline-block; background:var(--sky-light); color:var(--sky); font-size:0.72rem; font-weight:700; padding:0.3rem 0.9rem; border-radius:50px; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.75rem; }
+.section-tag.amber { background:var(--sun-pale); color:var(--sun-hover); }
+.section-tag.green { background:var(--green-light); color:var(--green); }
+.section-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.2rem); color:var(--ink); line-height:1.25; margin-bottom:0.6rem; }
+.section-sub { color:var(--ink-muted); font-size:1rem; max-width:560px; }
+.section-header { margin-bottom:2.5rem; }
+
+/* ── RANK TABLE ── */
+.rank-table { display:flex; flex-direction:column; gap:1rem; }
+.rank-row { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-lg); display:grid; grid-template-columns:56px 1fr auto; align-items:center; padding:1.5rem; gap:1.5rem; text-decoration:none; color:inherit; transition:box-shadow 0.2s,border-color 0.2s,transform 0.15s; position:relative; }
+.rank-row:hover { box-shadow:var(--shadow-md); border-color:var(--sun); transform:translateX(4px); }
+.rank-row.winner { border-color:var(--sun); background:linear-gradient(to right,var(--sun-light),var(--white)); }
+.winner-ribbon { position:absolute; top:-1px; right:1.5rem; background:var(--sun); color:var(--ink); font-size:0.68rem; font-weight:700; padding:0.25rem 0.75rem; border-radius:0 0 8px 8px; text-transform:uppercase; letter-spacing:0.06em; }
+.rank-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--border-strong); text-align:center; line-height:1; }
+.rank-row.winner .rank-num { color:var(--sun); }
+.rank-info { display:flex; flex-direction:column; gap:0.35rem; }
+.rank-name { font-weight:700; font-size:1.05rem; color:var(--ink); }
+.rank-desc { font-size:0.85rem; color:var(--ink-muted); }
+.rank-tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.25rem; }
+.tag { background:var(--sky-light); color:var(--sky); font-size:0.72rem; font-weight:600; padding:0.2rem 0.6rem; border-radius:6px; }
+.tag.green { background:var(--green-light); color:var(--green); }
+.tag.amber { background:var(--sun-pale); color:var(--sun-hover); }
+.rank-action { display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; text-align:right; }
+.rank-price { font-weight:700; font-size:1.2rem; color:var(--sky-dark); }
+.rank-price-note { font-size:0.75rem; color:var(--ink-muted); }
+.btn-rank { background:var(--sun); color:var(--ink); padding:0.6rem 1.25rem; border-radius:10px; font-weight:700; font-size:0.85rem; text-decoration:none; white-space:nowrap; transition:background 0.2s; }
+.btn-rank:hover { background:var(--sun-hover); }
+.btn-rank.ghost { background:transparent; border:1.5px solid var(--border-strong); color:var(--ink-soft); }
+.btn-rank.ghost:hover { border-color:var(--sun); color:var(--ink); }
+.affiliate-note-sm { font-size:0.78rem; color:var(--ink-muted); margin-top:1rem; }
+
+/* ── HOW IT WORKS ── */
+.how-bg { background:var(--sky-dark); padding:5rem 1.5rem; }
+.how-inner { max-width:1140px; margin:0 auto; }
+.how-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:2.5rem; counter-reset:step; }
+.how-step { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:var(--radius-lg); padding:2rem 1.5rem; position:relative; }
+.how-step::before { counter-increment:step; content:counter(step,decimal-leading-zero); font-family:'Playfair Display',serif; font-size:3rem; font-weight:700; color:rgba(245,158,11,0.2); position:absolute; top:1rem; right:1.25rem; line-height:1; }
+.how-icon { width:52px; height:52px; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.3); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:1.25rem; }
+.how-step h3 { font-weight:600; color:white; font-size:1rem; margin-bottom:0.5rem; }
+.how-step p { font-size:0.85rem; color:rgba(255,255,255,0.65); line-height:1.65; }
+
+/* ── CALCULATOR ── */
+.calc-wrap { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-xl); overflow:hidden; display:grid; grid-template-columns:1fr 1fr; }
+.calc-form { padding:2.5rem; background:var(--bg); }
+.calc-output { padding:2.5rem; }
+.calc-form h3,.calc-output h3 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--ink); margin-bottom:1.5rem; }
+.form-group { margin-bottom:1.25rem; }
+.form-label { display:block; font-size:0.82rem; font-weight:600; color:var(--ink-soft); margin-bottom:0.4rem; }
+.form-input,.form-select { width:100%; padding:0.75rem 1rem; border:1.5px solid var(--border); border-radius:10px; font-size:0.95rem; font-family:inherit; color:var(--ink); background:var(--white); transition:border-color 0.2s; outline:none; -webkit-appearance:none; }
+.form-input:focus,.form-select:focus { border-color:var(--sky); }
+.form-range-wrap { display:flex; align-items:center; gap:1rem; }
+.form-range { flex:1; accent-color:var(--sky); }
+.range-val { min-width:72px; text-align:right; font-weight:700; font-size:0.95rem; color:var(--sky-dark); }
+.calc-submit { width:100%; padding:0.9rem; background:var(--sky-dark); color:white; border:none; border-radius:12px; font-size:1rem; font-weight:700; font-family:inherit; cursor:pointer; transition:background 0.2s,transform 0.15s; margin-top:0.5rem; }
+.calc-submit:hover { background:var(--sky); transform:translateY(-1px); }
+.calc-idle { color:var(--ink-muted); font-size:0.9rem; }
+.result-cards { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0; }
+.result-card { background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; text-align:center; }
+.result-num { font-family:'Playfair Display',serif; font-size:1.75rem; font-weight:700; color:var(--sky-dark); display:block; margin-bottom:4px; }
+.result-num.green { color:var(--green); }
+.result-label { font-size:0.78rem; color:var(--ink-muted); }
+.result-note { font-size:0.78rem; color:var(--ink-muted); line-height:1.6; border-top:1px solid var(--border); padding-top:1rem; }
+.calc-results { display:none; }
+.calc-results.show { display:block; }
+.btn-result-cta { display:block; text-align:center; background:var(--sun); color:var(--ink); padding:0.85rem; border-radius:12px; font-weight:700; font-size:0.9rem; text-decoration:none; margin-top:1.25rem; transition:background 0.2s; }
+.btn-result-cta:hover { background:var(--sun-hover); }
+
+/* ── GUIDE CARDS ── */
+.guide-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+.guide-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; text-decoration:none; color:inherit; transition:box-shadow 0.2s,transform 0.2s; display:block; }
+.guide-card:hover { box-shadow:var(--shadow-md); transform:translateY(-4px); }
+.guide-thumb { height:150px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; }
+.guide-thumb.blue { background:linear-gradient(135deg,#E0F2FE,#7DD3FC); }
+.guide-thumb.amber { background:linear-gradient(135deg,#FEF3C7,#FDE68A); }
+.guide-thumb.green { background:linear-gradient(135deg,#ECFDF5,#6EE7B7); }
+.guide-thumb.slate { background:linear-gradient(135deg,#F1F5F9,#CBD5E1); }
+.guide-body { padding:1.25rem; }
+.guide-tag { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.5rem; }
+.guide-tag.blue { color:var(--sky); }
+.guide-tag.amber { color:var(--sun-hover); }
+.guide-tag.green { color:var(--green); }
+.guide-card h3 { font-size:0.95rem; font-weight:600; color:var(--ink); line-height:1.4; margin-bottom:0.4rem; }
+.guide-card p { font-size:0.82rem; color:var(--ink-muted); line-height:1.6; }
+.guide-meta { font-size:0.75rem; color:var(--ink-muted); margin-top:0.75rem; }
+
+/* ── FAQ ── */
+.faq-list { max-width:760px; }
+.faq-item { border:1.5px solid var(--border); border-radius:var(--radius); margin-bottom:0.75rem; overflow:hidden; background:var(--white); }
+.faq-q { padding:1.25rem 1.5rem; display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:1rem; font-weight:600; font-size:0.95rem; color:var(--ink); user-select:none; transition:background 0.15s; }
+.faq-q:hover { background:var(--bg); }
+.faq-icon { width:28px; height:28px; flex-shrink:0; border:1.5px solid var(--border-strong); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--ink-muted); transition:transform 0.25s,background 0.2s; }
+.faq-item.open .faq-icon { transform:rotate(45deg); background:var(--sun); border-color:var(--sun); color:white; }
+.faq-a { max-height:0; overflow:hidden; transition:max-height 0.35s ease,padding 0.25s; padding:0 1.5rem; font-size:0.9rem; color:var(--ink-soft); line-height:1.75; }
+.faq-item.open .faq-a { max-height:400px; padding:0 1.5rem 1.25rem; }
+
+/* ── NEWSLETTER ── */
+.newsletter-wrap { background:linear-gradient(135deg,var(--sky-dark),#1A5276); border-radius:var(--radius-xl); padding:3.5rem; text-align:center; position:relative; overflow:hidden; }
+.newsletter-wrap::before { content:''; position:absolute; top:-60px; right:-60px; width:280px; height:280px; background:radial-gradient(circle,rgba(245,158,11,0.2) 0%,transparent 70%); }
+.newsletter-wrap h2 { font-family:'Playfair Display',serif; font-size:2rem; color:white; margin-bottom:0.5rem; position:relative; z-index:1; }
+.newsletter-wrap p { color:rgba(255,255,255,0.72); margin-bottom:2rem; font-size:1rem; position:relative; z-index:1; }
+.newsletter-form { display:flex; gap:0.75rem; max-width:480px; margin:0 auto; position:relative; z-index:1; }
+.nl-input { flex:1; padding:0.85rem 1.25rem; border:1.5px solid rgba(255,255,255,0.2); border-radius:12px; background:rgba(255,255,255,0.1); color:white; font-family:inherit; font-size:0.95rem; outline:none; transition:border-color 0.2s; }
+.nl-input::placeholder { color:rgba(255,255,255,0.45); }
+.nl-input:focus { border-color:var(--sun); }
+.nl-btn { background:var(--sun); color:var(--ink); border:none; padding:0.85rem 1.5rem; border-radius:12px; font-weight:700; font-size:0.95rem; font-family:inherit; cursor:pointer; white-space:nowrap; transition:background 0.2s; }
+.nl-btn:hover { background:var(--sun-hover); }
+.nl-note { color:rgba(255,255,255,0.45); font-size:0.78rem; margin-top:0.75rem; position:relative; z-index:1; }
+
+/* ── FOOTER ── */
+footer { background:var(--ink); color:rgba(255,255,255,0.6); padding:4rem 1.5rem 2rem; }
+.footer-grid { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:2rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+.footer-brand p { font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.7; margin-top:0.75rem; max-width:260px; }
+.footer-affiliate-note { font-size:0.75rem; color:rgba(255,255,255,0.35); border-left:2px solid rgba(245,158,11,0.4); padding-left:0.75rem; margin-top:1rem; line-height:1.6; }
+.footer-col h4 { color:white; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem; }
+.footer-col ul { list-style:none; }
+.footer-col li { margin-bottom:0.5rem; }
+.footer-col a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.875rem; transition:color 0.2s; }
+.footer-col a:hover { color:var(--sun); }
+.footer-bottom { max-width:1140px; margin:0 auto; padding-top:1.5rem; display:flex; justify-content:space-between; font-size:0.78rem; color:rgba(255,255,255,0.3); flex-wrap:wrap; gap:0.5rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width:900px) {
+  .hero-inner { grid-template-columns:1fr; }
+  .hero-card { max-width:400px; }
+  .how-steps { grid-template-columns:1fr 1fr; }
+  .guide-grid { grid-template-columns:1fr 1fr; }
+  .foerderung-grid { grid-template-columns:1fr 1fr; }
+  .calc-wrap { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:640px) {
+  .nav-links { display:none; }
+  .how-steps { grid-template-columns:1fr; }
+  .guide-grid { grid-template-columns:1fr; }
+  .foerderung-grid { grid-template-columns:1fr; }
+  .rank-row { grid-template-columns:40px 1fr; }
+  .rank-action { display:none; }
+  .newsletter-form { flex-direction:column; }
+  .footer-grid { grid-template-columns:1fr; }
+  .result-cards { grid-template-columns:1fr; }
+  .country-bar-left { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- COUNTRY SWITCHER BAR -->
+<div class="country-bar">
+  <div class="country-bar-inner">
+    <span class="country-bar-left">Wähle dein Land für lokale Förderinfos & Preise:</span>
+    <div class="country-switcher">
+      <button class="country-btn active" id="btn-de" onclick="setCountry('de')">
+        <span class="flag">🇩🇪</span> Deutschland
+      </button>
+      <button class="country-btn" id="btn-at" onclick="setCountry('at')">
+        <span class="flag">🇦🇹</span> Österreich
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">☀</div>
+      <div>
+        <div class="logo-text">photovoltaik<span>-tipp</span>.de</div>
+        <div class="logo-sub">Unabhängiger Ratgeber</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#vergleich">Vergleich</a></li>
+      <li><a href="#foerderung">Förderung</a></li>
+      <li><a href="#ratgeber">Ratgeber</a></li>
+      <li><a href="#rechner">Sparrechner</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="newsletter.html">📬 Newsletter</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <div class="nav-country" onclick="scrollToCountry()">
+        <span id="nav-flag">🇩🇪</span>
+        <span id="nav-country-label">Deutschland</span>
+      </div>
+      <a href="#vergleich" class="nav-cta">Testsieger →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow fade-up">☀ Testsieger 2026 – aktuell geprüft</div>
+      <h1 class="fade-up fade-up-1">Das beste<br><em>Balkonkraftwerk</em><br>für dein Zuhause</h1>
+      <p class="hero-lead fade-up fade-up-2">Unabhängige Tests, ehrliche Vergleiche und aktuelle Förderinfos für <strong style="color:white;">Deutschland & Österreich</strong> – damit du keine 500 € zu viel bezahlst.</p>
+      <div class="hero-actions fade-up fade-up-3">
+        <a href="#vergleich" class="btn-sun">Vergleich ansehen →</a>
+        <a href="#rechner" class="btn-outline-white">Sparrechner ☀</a>
+      </div>
+      <div class="hero-trust fade-up fade-up-3">
+        <div class="hero-trust-item">✓ 30+ Geräte getestet</div>
+        <div class="hero-trust-item">✓ DE & AT Förderinfos</div>
+        <div class="hero-trust-item">✓ Keine bezahlten Platzierungen</div>
+      </div>
+    </div>
+    <div class="hero-card fade-up fade-up-2">
+      <div class="hero-card-badge">🏆 Testsieger 2026</div>
+      <div class="hero-card-img">
+        <div class="solar-pulse"></div>⚡
+      </div>
+      <h3>Hoymiles Balkonkraftwerk 800W Set</h3>
+      <div class="hero-card-price">
+        <span class="price-big">ab 349 €</span>
+        <span class="price-note">inkl. Versand</span>
+      </div>
+      <ul class="hero-card-features">
+        <li><span class="check">✓</span> 800 W Leistung – Plug & Play</li>
+        <li><span class="check">✓</span> Bewährtester Wechselrichter am Markt</li>
+        <li><span class="check">✓</span> WLAN-Monitoring inklusive</li>
+        <li><span class="check">✓</span> Verfügbar in DE & AT</li>
+      </ul>
+      <a href="https://amzn.to/435ciNn" target="_blank" rel="nofollow sponsored" class="btn-cta-full">Zum Angebot auf Amazon →</a>
+      <div class="affiliate-tag">* Partnerlink – für dich kein Aufpreis</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span class="trust-item"><span class="trust-dot"></span>Redaktion seit 2020</span>
+    <span class="trust-item"><span class="trust-dot"></span>30+ Geräte getestet</span>
+    <span class="trust-item"><span class="trust-dot"></span>Förderinfos für DE & AT</span>
+    <span class="trust-item"><span class="trust-dot"></span>Partnerlinks klar gekennzeichnet</span>
+    <span class="trust-item"><span class="trust-dot"></span>Monatlich aktualisiert</span>
+  </div>
+</div>
+
+<!-- VERGLEICH -->
+<section class="section" id="vergleich">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Vergleich 2026</div>
+      <h2 class="section-title">Die besten Balkonkraftwerke im Test</h2>
+      <p class="section-sub">Unsere Empfehlungen basieren auf echten Langzeittests – nicht auf Herstellerangaben.</p>
+    </div>
+    <div class="rank-table">
+      <a href="https://amzn.to/435ciNn" target="_blank" rel="nofollow sponsored" class="rank-row winner">
+        <div class="winner-ribbon">🏆 Testsieger</div>
+        <div class="rank-num">1</div>
+        <div class="rank-info">
+          <div class="rank-name">Hoymiles Balkonkraftwerk 800W Set</div>
+          <div class="rank-desc">Bewährtester Wechselrichter am Markt – Top-Leistung & zuverlässige Technik</div>
+          <div class="rank-tags"><span class="tag green">Sehr beliebt</span><span class="tag">Profi-Wechselrichter</span><span class="tag amber">800 W</span></div>
+        </div>
+        <div class="rank-action">
+          <div class="rank-price">ab 349 €</div>
+          <div class="rank-price-note">Amazon Prime – DE & AT</div>
+          <span class="btn-rank">Zum Angebot →*</span>
+        </div>
+      </a>
+      <a href="https://www.awin1.com/awclick.php?gid=596449&mid=68786&awinaffid=2819814&linkid=4724363&clickref=" target="_blank" rel="sponsored" class="rank-row" id="zendure-rank">
+        <div class="rank-num">2</div>
+        <div class="rank-info">
+          <div class="rank-name">Zendure SolarFlow 800 Pro 2</div>
+          <div class="rank-desc">Bestes Preis-Leistungs-Verhältnis – ideal für Einsteiger & smarte Energiespeicherung</div>
+          <div class="rank-tags"><span class="tag amber">Bestes Preis-Leistungs-Verhältnis</span><span class="tag green">Mit Speicher</span></div>
+        </div>
+        <div class="rank-action">
+          <div class="rank-price">ab 279 €</div>
+          <div class="rank-price-note">Zendure – DE & AT</div>
+          <span class="btn-rank ghost">Angebot ansehen →*</span>
+        </div>
+      </a>
+      <a href="https://amzn.to/4tW2SQe" target="_blank" rel="nofollow sponsored" class="rank-row">
+        <div class="rank-num">3</div>
+        <div class="rank-info">
+          <div class="rank-name">Solarway Balkonkraftwerk 800W</div>
+          <div class="rank-desc">Komplett-Set mit 1000Wp Solarmodulen – stark bewertet & sofort einsatzbereit</div>
+          <div class="rank-tags"><span class="tag">Komplettset</span><span class="tag green">1000 Wp</span></div>
+        </div>
+        <div class="rank-action">
+          <div class="rank-price">ab 339 €</div>
+          <div class="rank-price-note">Amazon</div>
+          <span class="btn-rank ghost">Angebot ansehen →*</span>
+        </div>
+      </a>
+    </div>
+    <p class="affiliate-note-sm">* Gekennzeichnete Links sind Affiliate-Partnerlinks. Bei einem Kauf erhalten wir eine kleine Provision – dein Preis bleibt gleich. Unsere Testentscheidungen sind davon unabhängig.</p>
+  </div>
+</section>
+
+<!-- FÖRDERUNG – LÄNDERSPEZIFISCH -->
+<section class="foerderung-bg" id="foerderung">
+  <div class="foerderung-inner">
+    <div class="section-header">
+      <div class="section-tag amber">Förderung 2026</div>
+      <h2 class="section-title">Aktuelle Fördermöglichkeiten</h2>
+      <p class="section-sub">Wähle oben dein Land – wir zeigen dir alle aktuellen Zuschüsse und Vergünstigungen.</p>
+    </div>
+
+    <!-- DEUTSCHLAND -->
+    <div class="country-section active" id="foerderung-de">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;">
+        <span style="font-size:1.5rem;">🇩🇪</span>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);">Förderungen in Deutschland 2026</h3>
+      </div>
+      <div class="foerderung-grid">
+        <div class="foerderung-card highlight">
+          <div class="foerderung-icon">🏛️</div>
+          <h3>Kommunale Förderungen</h3>
+          <div class="amount">bis zu 500 €</div>
+          <p>Viele Städte und Gemeinden fördern Balkonkraftwerke direkt – z.B. München (200 €), Berlin (150 €), Hamburg (200 €). Prüfe deine Gemeindewebsite.</p>
+          <a href="#" class="btn-foerderung">Förderfinder öffnen →</a>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">⚡</div>
+          <h3>Mehrwertsteuerbefreiung</h3>
+          <div class="amount green">0 % MwSt.</div>
+          <p>Seit 2023 gilt bundesweit 0 % Mehrwertsteuer auf Kauf und Installation von Balkonkraftwerken. Spart direkt ~19 % gegenüber dem alten Preis.</p>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">🏦</div>
+          <h3>KfW Kredit 270</h3>
+          <div class="amount">ab 1,02 % eff.</div>
+          <p>Günstige Finanzierung über die KfW-Bank für größere PV-Anlagen ab 1 kWp. Für reine Balkonkraftwerke meist nicht relevant, aber für Kombinationen.</p>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">💡</div>
+          <h3>Einspeisevergütung</h3>
+          <div class="amount">8,11 ct/kWh</div>
+          <p>Überschüssigen Strom kannst du ins Netz einspeisen. Die Vergütung beträgt 2026 ca. 8,11 Cent pro kWh – du brauchst einen Zweirichtungszähler.</p>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">🏠</div>
+          <h3>Landesförderungen</h3>
+          <div class="amount">bis zu 300 €</div>
+          <p>Bayern, NRW, Thüringen u.a. bieten eigene Landesprogramme. Oft kombinierbar mit kommunaler Förderung – so summieren sich die Zuschüsse.</p>
+          <a href="#" class="btn-foerderung">Bundesländer prüfen →</a>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">📋</div>
+          <h3>Anmeldepflicht DE</h3>
+          <div class="amount" style="font-size:1.1rem;color:var(--ink-soft);">Marktstammdaten&shy;register</div>
+          <p>Kostenlos, online in 5 Minuten. Pflicht seit 2023 – aber einfach erledigt. Außerdem: Netzbetreiber informieren (formlose E-Mail).</p>
+          <a href="#" class="btn-foerderung">Zur Anleitung →</a>
+        </div>
+      </div>
+      <div class="foerderung-note">
+        💡 <strong>Tipp:</strong> Viele Gemeinden haben eigene Förderprogramme, die kaum beworben werden. Ruf einfach bei deiner Gemeindeverwaltung an oder suche auf der Gemeindewebsite nach "Balkonkraftwerk Förderung" oder "Solaranlage Zuschuss".
+      </div>
+    </div>
+
+    <!-- ÖSTERREICH -->
+    <div class="country-section" id="foerderung-at">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;">
+        <span style="font-size:1.5rem;">🇦🇹</span>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);">Förderungen in Österreich 2026</h3>
+      </div>
+      <div class="foerderung-grid">
+        <div class="foerderung-card highlight">
+          <div class="foerderung-icon">🏛️</div>
+          <h3>Bundesförderung – OeMAG</h3>
+          <div class="amount">bis zu 30 %</div>
+          <p>Über die OeMAG (Ökostromabwicklungsstelle) gibt es Investitionszuschüsse für PV-Anlagen. Für Balkonkraftwerke je nach Bundesland unterschiedlich.</p>
+          <a href="#" class="btn-foerderung">OeMAG Förderung prüfen →</a>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">🏙️</div>
+          <h3>Wiener Förderung</h3>
+          <div class="amount green">200 € Pauschale</div>
+          <p>Wien fördert Balkonkraftwerke mit einer Pauschalförderung von 200 € pro Anlage. Antrag über MA 20 – Energieplanung, unkompliziert online.</p>
+          <a href="#" class="btn-foerderung">Wien Förderung →</a>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">🌄</div>
+          <h3>Landesförderungen</h3>
+          <div class="amount">100–500 €</div>
+          <p>Niederösterreich, Steiermark, Burgenland und andere Bundesländer haben eigene Programme. Burgenland gehört zu den großzügigsten Fördergebern.</p>
+          <a href="#" class="btn-foerderung">Bundesländer prüfen →</a>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">⚡</div>
+          <h3>Mehrwertsteuer</h3>
+          <div class="amount green">0 % MwSt.</div>
+          <p>Auch in Österreich gilt seit 2024 der ermäßigte Steuersatz (0 %) für die Lieferung und Installation von Photovoltaikmodulen bis 35 kWp.</p>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">💡</div>
+          <h3>Einspeisevergütung</h3>
+          <div class="amount">8,24 ct/kWh</div>
+          <p>Überschussstrom wird in Österreich mit ca. 8,24 Cent/kWh vergütet (Marktpreis 2026). Abrechnung über den Netzbetreiber – kein komplizierter Aufwand.</p>
+        </div>
+        <div class="foerderung-card">
+          <div class="foerderung-icon">📋</div>
+          <h3>Anmeldung in AT</h3>
+          <div class="amount" style="font-size:1.1rem;color:var(--ink-soft);">E-Control Meldepflicht</div>
+          <p>In Österreich musst du dein Balkonkraftwerk beim Netzbetreiber anmelden. Die meisten Netzbetreiber bieten ein einfaches Online-Formular an.</p>
+          <a href="#" class="btn-foerderung">Zur Anleitung →</a>
+        </div>
+      </div>
+      <div class="foerderung-note">
+        💡 <strong>Tipp für Österreich:</strong> Die Fördersituation variiert stark zwischen den Bundesländern. Burgenland und Wien sind besonders großzügig. Nutze die Förderberatung deines Landes-Energiebeauftragten – oft kostenlos und sehr hilfreich.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-bg">
+  <div class="how-inner">
+    <div class="section-header">
+      <div class="section-tag" style="background:rgba(245,158,11,0.15);color:#FCD34D;">So funktioniert's</div>
+      <h2 class="section-title" style="color:white;">In 4 Schritten zum eigenen Strom</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.65);">Kein Elektriker, keine Genehmigung – einfacher als du denkst.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-icon">📦</div>
+        <h3>Gerät auswählen</h3>
+        <p>Wähle anhand unseres Vergleichs das Modell, das zu deinem Balkon, Budget und Bedarf passt.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-icon">🔧</div>
+        <h3>Montieren</h3>
+        <p>Panels am Balkon befestigen – dauert ca. 30–60 Minuten, ganz ohne Fachkraft.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-icon">🔌</div>
+        <h3>Einstecken</h3>
+        <p>Schuko-Stecker in die Steckdose – ab diesem Moment fließt dein eigener Solarstrom.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-icon">📋</div>
+        <h3>Anmelden & sparen</h3>
+        <p>DE: Marktstammdatenregister · AT: Netzbetreiber informieren. Dann jährlich bis zu 600 € sparen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATGEBER -->
+<section class="section" id="ratgeber" style="background:var(--white);padding-top:3.5rem;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag amber">Ratgeber</div>
+      <h2 class="section-title">Alles, was du wissen musst</h2>
+      <p class="section-sub">Von der Kaufentscheidung bis zur Anmeldung – für Deutschland und Österreich.</p>
+    </div>
+    <div class="guide-grid">
+      <a href="balkonkraftwerk-kaufen-2026.html" class="guide-card">
+        <div class="guide-thumb blue">🔌</div>
+        <div class="guide-body">
+          <div class="guide-tag blue">Kaufberatung</div>
+          <h3>Balkonkraftwerk kaufen 2026: Der große Ratgeber</h3>
+          <p>Leistung, Wechselrichter, Garantie, Förderung – der vollständige Ratgeber für DE & AT.</p>
+          <div class="guide-meta">12 Min. · Mai 2026</div>
+        </div>
+      </a>
+      <a href="balkonkraftwerk-foerderung-deutschland-2026.html" class="guide-card">
+        <div class="guide-thumb amber">💶</div>
+        <div class="guide-body">
+          <div class="guide-tag amber">🇩🇪 Deutschland</div>
+          <h3>Förderung in Deutschland 2026: Alle Zuschüsse im Überblick</h3>
+          <p>Bund, Länder, Gemeinden – wo du wie viel bekommst und wie du den Antrag stellst.</p>
+          <div class="guide-meta">6 Min. · Mai 2026</div>
+        </div>
+      </a>
+      <a href="balkonkraftwerk-foerderung-oesterreich-2026.html" class="guide-card">
+        <div class="guide-thumb green">🇦🇹</div>
+        <div class="guide-body">
+          <div class="guide-tag green">🇦🇹 Österreich</div>
+          <h3>Förderung in Österreich 2026: OeMAG, Wien & Bundesländer</h3>
+          <p>Alle österreichischen Förderprogramme erklärt – inkl. Antragslinks.</p>
+          <div class="guide-meta">10 Min. · Mai 2026</div>
+        </div>
+      </a>
+      <a href="balkonkraftwerk-anmelden-2026.html" class="guide-card">
+        <div class="guide-thumb amber">📋</div>
+        <div class="guide-body">
+          <div class="guide-tag amber">Anmeldung</div>
+          <h3>Balkonkraftwerk anmelden 2026 – Schritt für Schritt</h3>
+          <p>MaStR, Netzbetreiber, Vermieter – in 15 Minuten erledigt. Kostenlos & einfach.</p>
+          <div class="guide-meta">8 Min. · Mai 2026</div>
+        </div>
+      </a>
+      <a href="balkonkraftwerk-mit-speicher-2026.html" class="guide-card">
+        <div class="guide-thumb blue">🔋</div>
+        <div class="guide-body">
+          <div class="guide-tag blue">Speicher</div>
+          <h3>Balkonkraftwerk mit Speicher: Lohnt sich der Aufpreis?</h3>
+          <p>Mit Speicher bis zu 90 % Eigenverbrauch – aber wann rechnet es sich wirklich?</p>
+          <div class="guide-meta">10 Min. · Mai 2026</div>
+        </div>
+      </a>
+      <a href="balkonkraftwerk-mieter-2026.html" class="guide-card">
+        <div class="guide-thumb slate">🏠</div>
+        <div class="guide-body">
+          <div class="guide-tag" style="color:var(--ink-muted);">Mieter</div>
+          <h3>Als Mieter zum Balkonkraftwerk – Rechte in DE & AT</h3>
+          <p>Was darf der Vermieter verbieten? Mietrecht in Deutschland und Österreich im Vergleich.</p>
+          <div class="guide-meta">8 Min. · Mai 2026</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section" id="rechner">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag green">Sparrechner</div>
+      <h2 class="section-title">Wie viel kannst du sparen?</h2>
+      <p class="section-sub">Für Deutschland und Österreich – mit länderspezifischen Strompreisen.</p>
+    </div>
+    <div class="calc-wrap">
+      <div class="calc-form">
+        <h3>Deine Angaben</h3>
+        <div class="form-group">
+          <label class="form-label">Land</label>
+          <select class="form-select" id="c-land" onchange="updateCalcCountry()">
+            <option value="de">🇩🇪 Deutschland</option>
+            <option value="at">🇦🇹 Österreich</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jahresstromverbrauch (kWh)</label>
+          <div class="form-range-wrap">
+            <input type="range" class="form-range" id="r-verbrauch" min="1000" max="6000" step="100" value="3000" oninput="updateRangeDisplay('r-verbrauch','v-verbrauch',val => val.toLocaleString('de-DE')+' kWh')">
+            <span class="range-val" id="v-verbrauch">3.000 kWh</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Strompreis (Cent/kWh) – <span id="preis-hint">Ø Deutschland 2026: 34 ct</span></label>
+          <div class="form-range-wrap">
+            <input type="range" class="form-range" id="r-preis" min="20" max="60" step="1" value="34" oninput="updateRangeDisplay('r-preis','v-preis',val => val+' ct')">
+            <span class="range-val" id="v-preis">34 ct</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Anlagengröße</label>
+          <select class="form-select" id="s-groesse">
+            <option value="425">425 W (1 Panel – Kleinstbalkon)</option>
+            <option value="800" selected>800 W (2 Panels – Standard)</option>
+            <option value="1200">1.200 W (3 Panels – Maximalausbau)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Ausrichtung des Balkons</label>
+          <select class="form-select" id="s-ausrichtung">
+            <option value="0.7">Nord (weniger Ertrag)</option>
+            <option value="0.85">Ost / West</option>
+            <option value="1.0" selected>Süd (optimaler Ertrag)</option>
+          </select>
+        </div>
+        <button class="calc-submit" onclick="calcResult()">Sparpotenzial berechnen ☀</button>
+      </div>
+      <div class="calc-output">
+        <h3>Dein Ergebnis</h3>
+        <div id="calc-idle" class="calc-idle">
+          <p>Fülle das Formular aus – dein persönliches Sparpotenzial erscheint hier sofort.</p>
+          <br>
+          <p style="font-size:0.82rem;color:var(--ink-muted)">Ein typischer Haushalt mit 3.000 kWh/Jahr spart mit 800 W etwa <strong>180–250 € pro Jahr</strong>.</p>
+        </div>
+        <div id="calc-results" class="calc-results">
+          <div class="result-cards">
+            <div class="result-card"><span class="result-num green" id="res-ersparnis">–</span><span class="result-label">Jährliche Ersparnis</span></div>
+            <div class="result-card"><span class="result-num" id="res-ertrag">–</span><span class="result-label">Jahresertrag (kWh)</span></div>
+            <div class="result-card"><span class="result-num" id="res-amort">–</span><span class="result-label">Amortisation</span></div>
+            <div class="result-card"><span class="result-num" id="res-co2">–</span><span class="result-label">CO₂ gespart/Jahr</span></div>
+          </div>
+          <p class="result-note" id="res-note"></p>
+          <a href="#foerderung" class="btn-result-cta">Passende Förderung für mein Land →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="background:var(--white);padding-top:3.5rem;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Häufige Fragen</div>
+      <h2 class="section-title">Alles auf einen Blick</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Gilt die 1.200-Watt-Regelung auch in Österreich?<div class="faq-icon">+</div></div>
+        <div class="faq-a">Ja – die EU-weite Regelung wurde in beiden Ländern umgesetzt. In Deutschland gilt seit September 2024 offiziell 800 W als vereinfachte Grenze (bis 2.000 W sind mit vollständiger Anmeldung möglich). In Österreich ist die Lage ähnlich – bis 800 W ist die Anmeldung stark vereinfacht, bis 1.200 W mit vollständiger Meldung beim Netzbetreiber möglich.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Funktionieren deutsche Balkonkraftwerke auch in Österreich?<div class="faq-icon">+</div></div>
+        <div class="faq-a">Ja, vollständig. Beide Länder verwenden 230 V / 50 Hz (Schuko-Steckdosen). Die Geräte sind technisch identisch – lediglich die Anmeldevorschriften und Förderungen unterscheiden sich. Du kannst ein in Deutschland gekauftes Gerät problemlos in Österreich betreiben.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Wie melde ich mein Balkonkraftwerk in Österreich an?<div class="faq-icon">+</div></div>
+        <div class="faq-a">In Österreich musst du dein Balkonkraftwerk beim zuständigen Netzbetreiber anmelden (z.B. Wien Energie, EVN, Salzburg AG). Die meisten bieten ein einfaches Online-Formular an. Eine Registrierung im österreichischen Pendant zum deutschen Marktstammdatenregister ist für Kleinanlagen unter 800 W meist nicht erforderlich.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Wie viel Strom erzeugt ein 800-W-Balkonkraftwerk wirklich?<div class="faq-icon">+</div></div>
+        <div class="faq-a">In Deutschland ca. 650–900 kWh/Jahr (Südausrichtung). In Österreich etwas mehr Sonnenstunden – je nach Region (Wien, Burgenland) bis zu 950–1.050 kWh/Jahr möglich. Das entspricht etwa 15–25 % des Stromverbrauchs eines 3-Personen-Haushalts.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Bekomme ich in Österreich mehr Förderung als in Deutschland?<div class="faq-icon">+</div></div>
+        <div class="faq-a">Das hängt stark vom Bundesland ab. Österreich hat teils großzügige Länderförderungen (besonders Wien und Burgenland), während in Deutschland viele Gemeinden eigene Zuschüsse bieten. In Summe sind beide Länder vergleichbar – aber die 0 % MwSt. gilt in beiden, was schon ~19 % Ersparnis bedeutet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section">
+  <div class="container">
+    <div class="newsletter-wrap">
+      <div style="font-size:2.5rem;margin-bottom:0.75rem">📬</div>
+      <h2>Immer auf dem neuesten Stand</h2>
+      <p>Neue Förderungen, Preissenkungen und Tests für Deutschland & Österreich – direkt in deinen Posteingang.</p>
+
+      <!-- Brevo Newsletter Form -->
+      <style>
+        #sib-container { max-width:480px !important; margin:0 auto !important; background:rgba(255,255,255,0.1) !important; border:1.5px solid rgba(255,255,255,0.2) !important; border-radius:14px !important; }
+        #sib-container .sib-form-block p { color:rgba(255,255,255,0.9) !important; }
+        #sib-container label.entry__label { color:rgba(255,255,255,0.8) !important; font-size:0.85rem !important; }
+        #sib-container input.input { background:rgba(255,255,255,0.1) !important; border:1.5px solid rgba(255,255,255,0.2) !important; color:white !important; border-radius:10px !important; }
+        #sib-container input.input::placeholder { color:rgba(255,255,255,0.45) !important; }
+        #sib-container .sib-form-block__button { background:#F59E0B !important; color:#0C4A6E !important; border-radius:10px !important; width:100% !important; font-weight:700 !important; }
+        #sib-container .entry__specification { color:rgba(255,255,255,0.4) !important; }
+        .sib-form { background:transparent !important; }
+        .sib-form-block:first-child { display:none !important; }
+      </style>
+
+      <div class="sib-form" style="text-align:center; background-color:transparent;">
+        <div id="sib-form-container" class="sib-form-container">
+          <div id="error-message" class="sib-form-message-panel" style="font-family:Helvetica,sans-serif;font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px;max-width:540px;display:none;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span>
+            </div>
+          </div>
+          <div id="success-message" class="sib-form-message-panel" style="font-family:Helvetica,sans-serif;font-size:16px;text-align:left;color:#085229;background-color:#e7faf0;border-color:#13ce66;border-radius:3px;max-width:540px;display:none;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">✅ Deine Anmeldung war erfolgreich! Bitte bestätige deine E-Mail.</span>
+            </div>
+          </div>
+          <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center;">
+            <form id="sib-form" method="POST" action="https://c212e707.sibforms.com/serve/MUIFADJeo0N8K0SR0FoHi_ym_dVQ9WXFyYCcj86T7YATOXoQOXhq-qhV0KvqfrzdEcMDRpFfVOpyGAC6LN_cKbQ7vnUxJVhPaUQ0puQaV4OIvRkM4wBbn7GmBnDxaZQJcuoGgBmLs1_6QrYtaLmRy_lb-j0d1yP7FhKzDrZbe14plPUCK5Mp6byGf20BbutTo7acPxbwQV-qLJ9KAQ==" data-type="subscription">
+              <div style="padding:8px 0;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label" style="font-weight:700;text-align:left;font-family:Helvetica,sans-serif;font-size:14px;" for="EMAIL">E-Mail-Adresse *</label>
+                      <div class="entry__field">
+                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="deine@email.de / .at" data-required="true" required />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:Helvetica,sans-serif;font-size:14px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px;"></label>
+                    <label class="entry__specification" style="font-family:Helvetica,sans-serif;font-size:12px;text-align:left;">Kein Spam. Abmeldung jederzeit. DSGVO-konform.</label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding:8px 0;">
+                <div class="sib-form-block" style="text-align:left;">
+                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-family:Helvetica,sans-serif;font-size:16px;font-weight:700;color:#FFFFFF;background-color:#3E4857;border-width:0px;border-radius:3px;" form="sib-form" type="submit">Kostenlos anmelden</button>
+                </div>
+              </div>
+              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+              <input type="hidden" name="locale" value="de">
+            </form>
+          </div>
+        </div>
+      </div>
+      <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="impressum">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:0.75rem;">
+        <div class="logo-mark" style="animation:none;">☀</div>
+        <div class="logo-text" style="color:white;">photovoltaik<span>-tipp</span>.de</div>
+      </div>
+      <p>Unabhängiger Ratgeber für Balkonkraftwerke in Deutschland und Österreich. Ehrliche Tests, klar gekennzeichnete Partnerlinks – seit 2020.</p>
+      <div class="footer-affiliate-note">Affiliate-Hinweis: Gekennzeichnete Links sind Partnerlinks. Bei einem Kauf erhalten wir eine Provision – für dich entstehen keine Mehrkosten. Redaktionelle Unabhängigkeit bleibt gewährleistet.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Vergleiche</h4>
+      <ul>
+        <li><a href="#">Testsieger 2026</a></li>
+        <li><a href="#">Beste unter 300 €</a></li>
+        <li><a href="#">Mit Speicher</a></li>
+        <li><a href="#">Für Mieter</a></li>
+        <li><a href="#">1.200 W Modelle</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Förderung</h4>
+      <ul>
+        <li><a href="#">🇩🇪 Deutschland</a></li>
+        <li><a href="#">🇦🇹 Österreich</a></li>
+        <li><a href="#">Wien Förderung</a></li>
+        <li><a href="#">Bundesländer AT</a></li>
+        <li><a href="#">KfW Kredit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Affiliate-Hinweis</a></li>
+        <li><a href="#">Über uns</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 photovoltaik-tipp.de – Deutschland & Österreich</span>
+    <span>Mit ☀ für die Energiewende</span>
+  </div>
+</footer>
+
+<script>
+// ── COUNTRY SWITCHER ──
+const ZENDURE_DE = "https://www.awin1.com/awclick.php?gid=596449&mid=68786&awinaffid=2819814&linkid=4724363&clickref=";
+const ZENDURE_AT = "https://www.awin1.com/awclick.php?gid=568325&mid=68786&awinaffid=2819814&linkid=4646064&clickref=";
+let currentCountry = 'de';
+
+function setCountry(c) {
+  currentCountry = c;
+  // Buttons
+  document.getElementById('btn-de').classList.toggle('active', c === 'de');
+  document.getElementById('btn-at').classList.toggle('active', c === 'at');
+  // Nav indicator
+  document.getElementById('nav-flag').textContent = c === 'de' ? '🇩🇪' : '🇦🇹';
+  document.getElementById('nav-country-label').textContent = c === 'de' ? 'Deutschland' : 'Österreich';
+  // Förderung sections
+  document.getElementById('foerderung-de').classList.toggle('active', c === 'de');
+  document.getElementById('foerderung-at').classList.toggle('active', c === 'at');
+  // Zendure link
+  const zendureLink = document.getElementById('zendure-rank');
+  if (zendureLink) zendureLink.href = c === 'at' ? ZENDURE_AT : ZENDURE_DE;
+  // Calculator land
+  document.getElementById('c-land').value = c;
+  updateCalcCountry();
+}
+
+function scrollToCountry() {
+  document.getElementById('foerderung').scrollIntoView({ behavior: 'smooth' });
+}
+
+function updateCalcCountry() {
+  const land = document.getElementById('c-land').value;
+  const defaultPrice = land === 'at' ? 32 : 34;
+  const hint = land === 'at' ? 'Ø Österreich 2026: 32 ct' : 'Ø Deutschland 2026: 34 ct';
+  document.getElementById('r-preis').value = defaultPrice;
+  document.getElementById('v-preis').textContent = defaultPrice + ' ct';
+  document.getElementById('preis-hint').textContent = hint;
+  // Sync country bar
+  setCountry(land);
+}
+
+// ── RANGE DISPLAY ──
+function updateRangeDisplay(rangeId, displayId, formatter) {
+  const val = parseInt(document.getElementById(rangeId).value);
+  document.getElementById(displayId).textContent = formatter(val);
+}
+
+// ── CALCULATOR ──
+function calcResult() {
+  const land = document.getElementById('c-land').value;
+  const verbrauch = parseInt(document.getElementById('r-verbrauch').value);
+  const preis = parseInt(document.getElementById('r-preis').value);
+  const watt = parseInt(document.getElementById('s-groesse').value);
+  const faktor = parseFloat(document.getElementById('s-ausrichtung').value);
+  // AT gets slightly more sun
+  const baseYield = land === 'at' ? 1.0 : 0.95;
+  const ertrag = Math.round(watt * baseYield * faktor);
+  const eigenanteil = Math.min(ertrag * 0.7, verbrauch * 0.35);
+  const einspeisungsverg = land === 'at' ? 8.24 : 8.11;
+  const einspeisung = ertrag - eigenanteil;
+  const ersparnis = Math.round((eigenanteil * preis / 100) + (einspeisung * einspeisungsverg / 100));
+  const geraetepreis = watt <= 425 ? 300 : watt <= 800 ? 499 : 750;
+  const amort = Math.round((geraetepreis / ersparnis) * 10) / 10;
+  const co2 = Math.round(ertrag * 0.4);
+
+  document.getElementById('res-ersparnis').textContent = '€ ' + ersparnis.toLocaleString('de-DE');
+  document.getElementById('res-ertrag').textContent = ertrag.toLocaleString('de-DE') + ' kWh';
+  document.getElementById('res-amort').textContent = amort.toFixed(1) + ' J.';
+  document.getElementById('res-co2').textContent = co2 + ' kg';
+  document.getElementById('res-note').textContent =
+    (land === 'at' ? '🇦🇹 Österreich' : '🇩🇪 Deutschland') + ': Mit einem ' + watt + '-W-Balkonkraftwerk erzeugst du ca. ' +
+    ertrag.toLocaleString('de-DE') + ' kWh/Jahr. Das spart dir rund ' +
+    ersparnis.toLocaleString('de-DE') + ' € jährlich – Amortisation nach ca. ' +
+    amort.toFixed(1) + ' Jahren. * Schätzwerte basierend auf Durchschnittswerten.';
+
+  document.getElementById('calc-idle').style.display = 'none';
+  document.getElementById('calc-results').classList.add('show');
+}
+
+// ── FAQ ──
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
