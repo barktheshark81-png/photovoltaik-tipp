@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Über uns – photovoltaik-tipp.de</title>
+<meta name="description" content="Wer steckt hinter photovoltaik-tipp.de? Lerne Thomas Berger kennen – unabhängiger Ratgeber für Balkonkraftwerke in Deutschland und Österreich.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0F1923;
+  --ink-soft: #3D4D5C;
+  --ink-muted: #6E8090;
+  --sun: #F59E0B;
+  --sun-hover: #D97706;
+  --sky: #0369A1;
+  --sky-dark: #0C4A6E;
+  --sky-light: #E0F2FE;
+  --green: #059669;
+  --bg: #F8F9FA;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-md: 0 4px 16px rgba(15,25,35,0.10), 0 2px 6px rgba(15,25,35,0.06);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse-sun { 0%,100% { box-shadow:0 0 0 0 rgba(245,158,11,0.4); } 50% { box-shadow:0 0 0 14px rgba(245,158,11,0); } }
+
+nav { position:sticky; top:0; z-index:200; background:rgba(255,255,255,0.93); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:1140px; margin:0 auto; padding:0 1.5rem; height:68px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+.logo-mark { width:36px; height:36px; background:var(--sun); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; animation:pulse-sun 3s ease-in-out infinite; }
+.logo-text { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--ink); line-height:1.2; }
+.logo-text span { color:var(--sun); }
+.logo-sub { font-size:0.65rem; color:var(--ink-muted); font-weight:400; letter-spacing:0.04em; }
+.nav-links { display:flex; align-items:center; gap:0.2rem; list-style:none; }
+.nav-links a { text-decoration:none; color:var(--ink-soft); font-size:0.875rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:8px; transition:background 0.15s,color 0.15s; }
+.nav-links a:hover { background:var(--sky-light); color:var(--sky); }
+.nav-cta { background:var(--sun); color:var(--white); padding:0.6rem 1.25rem; border-radius:10px; font-size:0.875rem; font-weight:700; text-decoration:none; transition:background 0.2s,transform 0.15s; white-space:nowrap; }
+.nav-cta:hover { background:var(--sun-hover); transform:translateY(-1px); }
+
+.hero { background:var(--sky-dark); position:relative; overflow:hidden; padding:5rem 1.5rem 4rem; text-align:center; }
+.hero-bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:48px 48px; }
+.hero-glow { position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:500px; height:400px; background:radial-gradient(circle,rgba(245,158,11,0.2) 0%,transparent 65%); pointer-events:none; }
+.hero-inner { max-width:700px; margin:0 auto; position:relative; z-index:1; animation:fadeUp 0.6s ease both; }
+.hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.35); color:#FCD34D; font-size:0.78rem; font-weight:600; padding:0.35rem 1rem; border-radius:50px; margin-bottom:1.5rem; letter-spacing:0.06em; text-transform:uppercase; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,2.8rem); line-height:1.2; color:var(--white); margin-bottom:1.25rem; }
+.hero h1 em { font-style:normal; color:var(--sun); }
+.hero-lead { font-size:1.05rem; color:rgba(255,255,255,0.78); line-height:1.75; }
+
+.section { padding:5rem 1.5rem; }
+.section-inner { max-width:900px; margin:0 auto; }
+
+.profile-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-xl); padding:3rem; display:grid; grid-template-columns:200px 1fr; gap:3rem; align-items:start; margin-bottom:3rem; box-shadow:var(--shadow-md); }
+.profile-avatar { width:160px; height:160px; border-radius:50%; background:linear-gradient(135deg,var(--sky-dark),var(--sky)); display:flex; align-items:center; justify-content:center; font-size:5rem; margin:0 auto; }
+.profile-name { font-family:'Playfair Display',serif; font-size:1.75rem; color:var(--ink); margin-bottom:0.25rem; }
+.profile-title { font-size:0.9rem; color:var(--sky); font-weight:600; margin-bottom:1.25rem; }
+.profile-bio { font-size:0.95rem; color:var(--ink-soft); line-height:1.8; }
+
+.story-section { max-width:760px; }
+.story-section h2 { font-family:'Playfair Display',serif; font-size:1.75rem; color:var(--ink); margin-bottom:1.25rem; }
+.story-section p { font-size:0.95rem; color:var(--ink-soft); line-height:1.85; margin-bottom:1.25rem; }
+
+.values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin:3rem 0; }
+.value-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem; text-align:center; }
+.value-icon { font-size:2.5rem; margin-bottom:1rem; }
+.value-card h3 { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:0.5rem; }
+.value-card p { font-size:0.875rem; color:var(--ink-muted); line-height:1.65; }
+
+.contact-box { background:linear-gradient(135deg,var(--sky-dark),#1A5276); border-radius:var(--radius-xl); padding:3rem; text-align:center; position:relative; overflow:hidden; }
+.contact-box::before { content:''; position:absolute; top:-60px; right:-60px; width:280px; height:280px; background:radial-gradient(circle,rgba(245,158,11,0.2) 0%,transparent 70%); }
+.contact-box h2 { font-family:'Playfair Display',serif; font-size:1.75rem; color:white; margin-bottom:0.75rem; position:relative; z-index:1; }
+.contact-box p { color:rgba(255,255,255,0.72); margin-bottom:2rem; position:relative; z-index:1; }
+.contact-btn { display:inline-block; background:var(--sun); color:var(--ink); padding:0.85rem 2rem; border-radius:12px; font-weight:700; font-size:0.95rem; text-decoration:none; transition:background 0.2s; position:relative; z-index:1; }
+.contact-btn:hover { background:var(--sun-hover); }
+
+footer { background:var(--ink); color:rgba(255,255,255,0.6); padding:4rem 1.5rem 2rem; }
+.footer-grid { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:2rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+.footer-brand p { font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.7; margin-top:0.75rem; max-width:260px; }
+.footer-affiliate-note { font-size:0.75rem; color:rgba(255,255,255,0.35); border-left:2px solid rgba(245,158,11,0.4); padding-left:0.75rem; margin-top:1rem; line-height:1.6; }
+.footer-col h4 { color:white; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem; }
+.footer-col ul { list-style:none; }
+.footer-col li { margin-bottom:0.5rem; }
+.footer-col a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.875rem; transition:color 0.2s; }
+.footer-col a:hover { color:var(--sun); }
+.footer-bottom { max-width:1140px; margin:0 auto; padding-top:1.5rem; display:flex; justify-content:space-between; font-size:0.78rem; color:rgba(255,255,255,0.3); flex-wrap:wrap; gap:0.5rem; }
+
+@media(max-width:768px) {
+  .profile-card { grid-template-columns:1fr; text-align:center; }
+  .values-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">☀</div>
+      <div>
+        <div class="logo-text">photovoltaik<span>-tipp</span>.de</div>
+        <div class="logo-sub">Unabhängiger Ratgeber</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#vergleich">Vergleich</a></li>
+      <li><a href="index.html#foerderung">Förderung</a></li>
+      <li><a href="index.html#ratgeber">Ratgeber</a></li>
+      <li><a href="index.html#rechner">Sparrechner</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="newsletter.html">📬 Newsletter</a></li>
+    </ul>
+    <a href="index.html#vergleich" class="nav-cta">Testsieger →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">👋 Wer wir sind</div>
+    <h1>Unabhängig, ehrlich & <em>leidenschaftlich</em></h1>
+    <p class="hero-lead">Hinter photovoltaik-tipp.de steckt eine Leidenschaft für erneuerbare Energien und der Wunsch, Menschen beim Einstieg in die Solarenergie zu helfen.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="profile-card">
+      <div>
+        <div class="profile-avatar">👨‍💻</div>
+      </div>
+      <div>
+        <div class="profile-name">Thomas Berger</div>
+        <div class="profile-title">Gründer & Chefredakteur, photovoltaik-tipp.de</div>
+        <p class="profile-bio">
+          Als Ingenieur und leidenschaftlicher Technik-Enthusiast beschäftige ich mich seit über 10 Jahren mit erneuerbaren Energien. Nach dem Kauf meines ersten Balkonkraftwerks 2020 war ich frustriert über die unübersichtliche Informationslage – zu viele Werbeartikel, zu wenig ehrliche Vergleiche. Also habe ich photovoltaik-tipp.de gegründet.
+        </p>
+      </div>
+    </div>
+
+    <div class="story-section">
+      <h2>Unsere Geschichte</h2>
+      <p>Es begann 2020 mit einem einfachen Balkonkraftwerk und einer Menge Fragen: Welches Modell ist wirklich gut? Wo gibt es Förderungen? Darf ich das als Mieter überhaupt? Die Antworten waren schwer zu finden – vergraben zwischen Werbeartikeln und veralteten Informationen.</p>
+      <p>Ich beschloss, selbst zu testen, zu recherchieren und alles an einem Ort zusammenzufassen. Was als kleines Hobby-Projekt begann, ist heute einer der meistgenutzten unabhängigen Ratgeber für Balkonkraftwerke in Deutschland und Österreich.</p>
+      <p>Unser Versprechen: Wir verdienen zwar Provisionen über Partnerlinks – aber das beeinflusst unsere redaktionelle Unabhängigkeit nicht. Ein schlechtes Produkt empfehlen wir nicht, auch wenn die Provision noch so hoch wäre.</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🔍</div>
+        <h3>Unabhängigkeit</h3>
+        <p>Wir testen und vergleichen unabhängig. Kein Hersteller kann unsere Bewertungen kaufen.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💚</div>
+        <h3>Nachhaltigkeit</h3>
+        <p>Wir glauben an die Energiewende und wollen so vielen Menschen wie möglich den Einstieg erleichtern.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📊</div>
+        <h3>Transparenz</h3>
+        <p>Partnerlinks sind klar gekennzeichnet. Unsere Methodik ist offen und nachvollziehbar.</p>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <h2>Fragen oder Feedback?</h2>
+      <p>Wir freuen uns über Feedback, Fragen und Verbesserungsvorschläge. Schreib uns einfach!</p>
+      <a href="mailto:info@photovoltaik-tipp.de" class="contact-btn">✉️ info@photovoltaik-tipp.de</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:0.75rem;">
+        <div class="logo-mark" style="animation:none;">☀</div>
+        <div class="logo-text" style="color:white;">photovoltaik<span>-tipp</span>.de</div>
+      </div>
+      <p>Unabhängiger Ratgeber für Balkonkraftwerke in Deutschland und Österreich. Ehrliche Tests, klar gekennzeichnete Partnerlinks – seit 2020.</p>
+      <div class="footer-affiliate-note">Affiliate-Hinweis: Gekennzeichnete Links sind Partnerlinks. Bei einem Kauf erhalten wir eine Provision – für dich entstehen keine Mehrkosten.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Vergleiche</h4>
+      <ul>
+        <li><a href="index.html#vergleich">Testsieger 2026</a></li>
+        <li><a href="balkonkraftwerk-kaufen.html">Kaufberatung</a></li>
+        <li><a href="balkonkraftwerk-mit-speicher-2026.html">Mit Speicher</a></li>
+        <li><a href="balkonkraftwerk-mieter-2026.html">Für Mieter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Förderung</h4>
+      <ul>
+        <li><a href="balkonkraftwerk-foerderung-deutschland-2026.html">🇩🇪 Deutschland</a></li>
+        <li><a href="balkonkraftwerk-foerderung-oesterreich-2026.html">🇦🇹 Österreich</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum (2).html">Impressum</a></li>
+        <li><a href="impressum (2).html">Datenschutz</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 photovoltaik-tipp.de – Deutschland & Österreich</span>
+    <span>Mit ☀ für die Energiewende</span>
+  </div>
+</footer>
+
+</body>
+</html>
