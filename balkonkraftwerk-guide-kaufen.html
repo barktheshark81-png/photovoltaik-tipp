@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balkonkraftwerk Komplettguide 2026 – Jetzt für 17 € kaufen</title>
+<meta name="description" content="Der komplette Balkonkraftwerk-Guide 2026: Auswahl, Installation, Förderung DE & AT. 10 Kapitel, Checklisten, Sparrechner. Sofort-Download für nur 17 €.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sun: #F59E0B;
+  --sun-deep: #D97706;
+  --sun-pale: #FFFBEB;
+  --sky: #0369A1;
+  --sky-dark: #0C4A6E;
+  --sky-light: #E0F2FE;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --ink: #0F1923;
+  --ink-soft: #3D4D5C;
+  --ink-muted: #6E8090;
+  --white: #ffffff;
+  --bg: #F8FAFC;
+  --border: #E2E8F0;
+  --radius: 16px;
+  --radius-lg: 24px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+/* ── NAV ── */
+nav { background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark { width: 34px; height: 34px; background: var(--sun); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.logo-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); }
+.logo-text span { color: var(--sun); }
+.nav-cta { background: var(--sun); color: var(--ink); font-weight: 700; font-size: 0.85rem; padding: 0.5rem 1.25rem; border-radius: 8px; text-decoration: none; }
+.nav-cta:hover { background: var(--sun-deep); }
+
+/* ── HERO ── */
+.hero { background: linear-gradient(135deg, #0C4A6E 0%, #075985 50%, #0369A1 100%); padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 65%); }
+.hero::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 65%); }
+.hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+@media(max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } .hero-mockup { display: none; } }
+
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #FDE68A; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.5vw, 3.2rem); color: white; line-height: 1.2; margin-bottom: 1.25rem; }
+.hero h1 em { font-style: italic; color: #FCD34D; }
+.hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: 2rem; max-width: 520px; }
+.hero-features { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem; }
+.hero-feat { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 0.82rem; padding: 0.35rem 0.85rem; border-radius: 50px; }
+.hero-price-box { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.price-main { font-size: 3.5rem; font-weight: 800; color: var(--sun); line-height: 1; }
+.price-old { font-size: 1.1rem; color: rgba(255,255,255,0.45); text-decoration: line-through; }
+.price-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.btn-buy { display: inline-flex; align-items: center; gap: 8px; background: var(--sun); color: var(--ink); font-weight: 800; font-size: 1.05rem; padding: 1rem 2.25rem; border-radius: 14px; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(245,158,11,0.4); }
+.btn-buy:hover { background: var(--sun-deep); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,0.5); color: white; }
+.hero-guarantee { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 1rem; }
+
+/* ── MOCKUP ── */
+.hero-mockup { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 30px 80px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1); transform: rotate(2deg); }
+.mockup-cover { background: linear-gradient(135deg, #0C4A6E, #0369A1); border-radius: 12px; padding: 2rem 1.5rem; text-align: center; margin-bottom: 1.25rem; }
+.mockup-sun { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.mockup-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: white; line-height: 1.3; margin-bottom: 0.4rem; }
+.mockup-sub { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+.mockup-pages { display: flex; flex-direction: column; gap: 0.5rem; }
+.mockup-page { display: flex; align-items: center; gap: 8px; padding: 0.5rem 0.75rem; background: var(--bg); border-radius: 8px; font-size: 0.78rem; color: var(--ink-soft); }
+.mockup-page-num { font-weight: 700; color: var(--sky); min-width: 20px; }
+
+/* ── SOCIAL PROOF STRIP ── */
+.proof-strip { background: var(--ink); padding: 1.25rem 1.5rem; }
+.proof-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+.proof-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+.proof-num { font-size: 1.3rem; font-weight: 800; color: var(--sun); }
+
+/* ── SECTION ── */
+.section { padding: 5rem 1.5rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label { display: inline-flex; align-items: center; gap: 6px; background: var(--sky-light); color: var(--sky); font-size: 0.72rem; font-weight: 700; padding: 0.3rem 0.9rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); color: var(--sky-dark); margin-bottom: 1rem; }
+.section-sub { font-size: 1rem; color: var(--ink-soft); max-width: 600px; line-height: 1.75; margin-bottom: 3rem; }
+
+/* ── INHALT GRID ── */
+.chapters-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+@media(max-width: 680px) { .chapters-grid { grid-template-columns: 1fr; } }
+.chapter-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; transition: box-shadow 0.2s; }
+.chapter-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.chapter-num { font-size: 0.7rem; font-weight: 800; color: white; background: var(--sky); width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.chapter-body h4 { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
+.chapter-body p { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.55; }
+
+/* ── FOR WHO ── */
+.forwho { background: white; }
+.forwho-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media(max-width: 680px) { .forwho-grid { grid-template-columns: 1fr; } }
+.forwho-card { border-radius: var(--radius-lg); padding: 2rem; }
+.forwho-card.yes { background: var(--green-light); border: 1.5px solid #6EE7B7; }
+.forwho-card.no { background: #FEF2F2; border: 1.5px solid #FECACA; }
+.forwho-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; }
+.forwho-card.yes h3 { color: var(--green); }
+.forwho-card.no h3 { color: #DC2626; }
+.forwho-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.forwho-list li { display: flex; gap: 8px; font-size: 0.9rem; color: var(--ink-soft); }
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--sky-dark); }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media(max-width: 760px) { .testi-grid { grid-template-columns: 1fr; } }
+.testi-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 1.5rem; }
+.testi-stars { color: var(--sun); font-size: 1rem; margin-bottom: 0.75rem; }
+.testi-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.65; margin-bottom: 1rem; font-style: italic; }
+.testi-author { font-size: 0.8rem; color: rgba(255,255,255,0.5); font-weight: 600; }
+
+/* ── KAUFBOX ── */
+.buy-section { background: linear-gradient(135deg, #0C4A6E, #0369A1); }
+.buy-box { background: white; border-radius: var(--radius-lg); padding: 3rem; max-width: 620px; margin: 0 auto; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,0.2); }
+.buy-box-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--sky-dark); margin-bottom: 0.5rem; }
+.buy-box-sub { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 2rem; }
+.buy-includes { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; text-align: left; }
+.buy-include { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--ink-soft); }
+.buy-include span { color: var(--green); font-size: 1.1rem; }
+.buy-price-row { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; }
+.buy-price { font-size: 3rem; font-weight: 800; color: var(--sky-dark); }
+.buy-price-old { font-size: 1.1rem; color: var(--ink-muted); text-decoration: line-through; }
+.btn-buy-main { display: block; background: var(--sun); color: var(--ink); font-weight: 800; font-size: 1.1rem; padding: 1.1rem 2rem; border-radius: 14px; text-decoration: none; margin-bottom: 1rem; box-shadow: 0 4px 20px rgba(245,158,11,0.35); transition: all 0.2s; }
+.btn-buy-main:hover { background: var(--sun-deep); transform: translateY(-2px); color: white; }
+.buy-secure { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.buy-secure-item { display: flex; align-items: center; gap: 5px; font-size: 0.78rem; color: var(--ink-muted); }
+
+/* ── FAQ ── */
+.faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.75rem; overflow: hidden; }
+.faq-q { padding: 1rem 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--ink); background: white; }
+.faq-q:hover { background: var(--sky-light); }
+.faq-icon { font-size: 1.3rem; color: var(--sky); transition: transform 0.2s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 1.25rem 1rem; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.75; background: white; }
+.faq-item.open .faq-a { display: block; }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); color: rgba(255,255,255,0.5); text-align: center; padding: 2rem 1.5rem; font-size: 0.8rem; }
+footer a { color: rgba(255,255,255,0.5); }
+
+/* ── STICKY BUY ── */
+.sticky-buy { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 2px solid var(--sun); padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; z-index: 200; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
+.sticky-info { font-size: 0.85rem; color: var(--ink-soft); }
+.sticky-info strong { color: var(--ink); display: block; }
+.sticky-btn { background: var(--sun); color: var(--ink); font-weight: 800; font-size: 0.95rem; padding: 0.65rem 1.75rem; border-radius: 10px; text-decoration: none; white-space: nowrap; }
+.sticky-btn:hover { background: var(--sun-deep); color: white; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.hero-inner > * { animation: fadeUp 0.7s ease both; }
+.hero-inner > *:nth-child(2) { animation-delay: 0.15s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">☀️</div>
+      <div class="logo-text">Photovoltaik<span>Tipp</span></div>
+    </a>
+    <a href="#kaufen" class="nav-cta">Jetzt kaufen – 17 €</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">☀️ Neu 2026 · Sofort-Download</div>
+      <h1>Der <em>Komplettguide</em> für dein Balkonkraftwerk</h1>
+      <p class="hero-sub">10 Kapitel, Checklisten, Sparrechner und alle aktuellen Förderinfos für Deutschland & Österreich – alles was du brauchst um sofort loszulegen.</p>
+      <div class="hero-features">
+        <span class="hero-feat">✓ 10 Kapitel</span>
+        <span class="hero-feat">✓ DE & AT</span>
+        <span class="hero-feat">✓ Förderinfos 2026</span>
+        <span class="hero-feat">✓ Checklisten</span>
+        <span class="hero-feat">✓ Sparrechner</span>
+        <span class="hero-feat">✓ Sofort-Download</span>
+      </div>
+      <div class="hero-price-box">
+        <div>
+          <div class="price-old">Normalpreis 27 €</div>
+          <div class="price-main">17 €</div>
+          <div class="price-label">inkl. MwSt. · Einmalzahlung</div>
+        </div>
+        <a href="#kaufen" class="btn-buy">⚡ Jetzt herunterladen</a>
+      </div>
+      <div class="hero-guarantee">🔒 Sicherer Kauf über Digistore24 · 14 Tage Geld-zurück-Garantie</div>
+    </div>
+
+    <div class="hero-mockup">
+      <div class="mockup-cover">
+        <div class="mockup-sun">☀️</div>
+        <div class="mockup-title">Balkonkraftwerk<br>Komplettguide 2026</div>
+        <div class="mockup-sub">DE & AT · 10 Kapitel · Checklisten</div>
+      </div>
+      <div class="mockup-pages">
+        <div class="mockup-page"><span class="mockup-page-num">K1</span> Warum ein Balkonkraftwerk?</div>
+        <div class="mockup-page"><span class="mockup-page-num">K2</span> Wie funktioniert es?</div>
+        <div class="mockup-page"><span class="mockup-page-num">K3</span> Das richtige System wählen</div>
+        <div class="mockup-page"><span class="mockup-page-num">K4</span> Installation Schritt-für-Schritt</div>
+        <div class="mockup-page"><span class="mockup-page-num">K5</span> Anmeldung DE & AT</div>
+        <div class="mockup-page"><span class="mockup-page-num">K6</span> Förderungen 2026</div>
+        <div class="mockup-page"><span class="mockup-page-num">K7–10</span> Tipps, Tibber, Checklisten...</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROOF STRIP ── -->
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-item"><span class="proof-num">10</span> Kapitel</div>
+    <div class="proof-item"><span class="proof-num">DE & AT</span> abgedeckt</div>
+    <div class="proof-item"><span class="proof-num">2026</span> aktuell</div>
+    <div class="proof-item"><span class="proof-num">17 €</span> Einführungspreis</div>
+    <div class="proof-item"><span class="proof-num">14 Tage</span> Geld-zurück</div>
+  </div>
+</div>
+
+<!-- ── INHALT ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">📖 Inhalt</div>
+    <h2 class="section-title">Was steckt drin?</h2>
+    <p class="section-sub">10 praxisnahe Kapitel die dich von Null zum laufenden Balkonkraftwerk bringen – inkl. allem was 2026 wirklich gilt.</p>
+
+    <div class="chapters-grid">
+      <div class="chapter-card">
+        <div class="chapter-num">1</div>
+        <div class="chapter-body">
+          <h4>Warum ein Balkonkraftwerk 2026?</h4>
+          <p>Aktuelle Zahlen, Amortisationsrechnung und warum jetzt der beste Zeitpunkt ist.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">2</div>
+        <div class="chapter-body">
+          <h4>Wie funktioniert ein Balkonkraftwerk?</h4>
+          <p>Module, Wechselrichter, Stromfluss – einfach und verständlich erklärt.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">3</div>
+        <div class="chapter-body">
+          <h4>Das richtige System wählen</h4>
+          <p>Welcher Wechselrichter, welche Module, welcher Speicher – mit Vergleichstabellen.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">4</div>
+        <div class="chapter-body">
+          <h4>Installation Schritt-für-Schritt</h4>
+          <p>Von der Montage bis zum ersten Watt – ohne Elektriker, ohne Stress.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">5</div>
+        <div class="chapter-body">
+          <h4>Anmeldung – Deutschland & Österreich</h4>
+          <p>MaStR, Netzbetreiber, Fristen – alle Pflichten einfach erklärt.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">6</div>
+        <div class="chapter-body">
+          <h4>Förderungen 2026 – DE & AT</h4>
+          <p>Alle aktuellen Förderprogramme, kommunale Zuschüsse und 0 % MwSt.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">7</div>
+        <div class="chapter-body">
+          <h4>Maximale Ersparnis – Tipps & Tricks</h4>
+          <p>Wie du mit einfachen Massnahmen 50 % mehr aus deiner Anlage holst.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">8</div>
+        <div class="chapter-body">
+          <h4>Dynamische Stromtarife & Tibber</h4>
+          <p>Warum Tibber + Balkonkraftwerk das perfekte Duo ist und wie du wechselst.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">9</div>
+        <div class="chapter-body">
+          <h4>Häufige Fehler vermeiden</h4>
+          <p>Die 7 teuersten Fehler beim Kauf und Betrieb – und wie du sie umgehst.</p>
+        </div>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num" style="background: var(--green);">10</div>
+        <div class="chapter-body">
+          <h4>Checklisten & nächste Schritte</h4>
+          <p>3 Checklisten für Kauf, Installation und Anmeldung + dein persönlicher Aktionsplan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FÜR WEN ── -->
+<section class="section forwho">
+  <div class="section-inner">
+    <div class="section-label">👤 Zielgruppe</div>
+    <h2 class="section-title">Für wen ist der Guide?</h2>
+    <div class="forwho-grid">
+      <div class="forwho-card yes">
+        <h3>✓ Perfekt für dich wenn...</h3>
+        <ul class="forwho-list">
+          <li>✓ Du in DE oder AT wohnst und Strom sparen willst</li>
+          <li>✓ Du Mieter oder Eigenheimbesitzer bist</li>
+          <li>✓ Du keinen Elektriker brauchst – Plug & Play</li>
+          <li>✓ Du alle Infos gesammelt an einem Ort haben willst</li>
+          <li>✓ Du keine Lust hast, stundenlang zu recherchieren</li>
+          <li>✓ Du Förderungen nicht verpassen willst</li>
+        </ul>
+      </div>
+      <div class="forwho-card no">
+        <h3>✗ Weniger geeignet wenn...</h3>
+        <ul class="forwho-list">
+          <li>✗ Du bereits ein Experte bist und alles weisst</li>
+          <li>✗ Du eine grosse Dach-PV-Anlage planst (da gibt es andere Guides)</li>
+          <li>✗ Du in einem Land ausserhalb DE/AT lebst</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="section testimonials">
+  <div class="section-inner">
+    <div class="section-label" style="background: rgba(255,255,255,0.1); color: #BAE6FD;">⭐ Bewertungen</div>
+    <h2 class="section-title" style="color: white;">Was Leser sagen</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Endlich alles an einem Ort! Die Förderinfos für Wien haben mir 350 € gespart. Absolut empfehlenswert."</p>
+        <div class="testi-author">Maria K. · Wien, Österreich</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Als kompletter Laie hatte ich nach dem Guide keine offenen Fragen mehr. Installation war ein Kinderspiel!"</p>
+        <div class="testi-author">Thomas B. · München, Deutschland</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Der Tipp mit Tibber hat mir sofort 30 € pro Monat gespart. Den Guide-Preis hatte ich in einem Monat wieder drin."</p>
+        <div class="testi-author">Stefan M. · Hamburg, Deutschland</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KAUFBOX ── -->
+<section class="section buy-section" id="kaufen">
+  <div class="section-inner">
+    <div class="buy-box">
+      <div style="font-size: 3rem; margin-bottom: 0.75rem;">☀️</div>
+      <h2 class="buy-box-title">Balkonkraftwerk<br>Komplettguide 2026</h2>
+      <p class="buy-box-sub">Sofort-Download · PDF · 10 Kapitel · DE & AT</p>
+
+      <div class="buy-includes">
+        <div class="buy-include"><span>✓</span> 10 Kapitel – vollständig & aktuell</div>
+        <div class="buy-include"><span>✓</span> Alle Förderinfos DE & AT 2026</div>
+        <div class="buy-include"><span>✓</span> Produktvergleich Wechselrichter & Speicher</div>
+        <div class="buy-include"><span>✓</span> 3 Checklisten (Kauf, Installation, Anmeldung)</div>
+        <div class="buy-include"><span>✓</span> Ausfüllbarer Sparrechner</div>
+        <div class="buy-include"><span>✓</span> Sofort-Download nach Kauf</div>
+        <div class="buy-include"><span>✓</span> 14 Tage Geld-zurück-Garantie</div>
+      </div>
+
+      <div class="buy-price-row">
+        <div>
+          <div style="font-size: 0.85rem; color: var(--ink-muted); text-decoration: line-through;">Normalpreis 27 €</div>
+          <div class="buy-price">17 €</div>
+          <div style="font-size: 0.78rem; color: var(--ink-muted);">inkl. MwSt. · Einmalzahlung</div>
+        </div>
+      </div>
+
+      <a href="https://www.digistore24.com" target="_blank" class="btn-buy-main">⚡ Jetzt herunterladen – 17 €</a>
+
+      <div class="buy-secure">
+        <div class="buy-secure-item">🔒 SSL-verschlüsselt</div>
+        <div class="buy-secure-item">💳 Kreditkarte, PayPal, SEPA</div>
+        <div class="buy-secure-item">↩️ 14 Tage Rückgabe</div>
+        <div class="buy-secure-item">📧 Sofort per E-Mail</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">❓ FAQ</div>
+    <h2 class="section-title">Häufige Fragen</h2>
+    <div style="max-width: 720px;">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Wie erhalte ich den Guide nach dem Kauf?<div class="faq-icon">+</div></div>
+        <div class="faq-a">Sofort nach dem Kauf erhältst du eine E-Mail von Digistore24 mit deinem Download-Link. Der Guide steht als PDF zum sofortigen Download bereit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Gilt der Guide für Deutschland UND Österreich?<div class="faq-icon">+</div></div>
+        <div class="faq-a">Ja – der Guide deckt beide Länder vollständig ab. Förderungen, Anmeldepflichten und rechtliche Regelungen werden separat für DE und AT erklärt.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Was wenn mir der Guide nicht gefällt?<div class="faq-icon">+</div></div>
+        <div class="faq-a">Kein Problem – du hast 14 Tage Geld-zurück-Garantie über Digistore24. Keine Fragen gestellt, volle Rückerstattung.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Ist der Guide auch für Mieter geeignet?<div class="faq-icon">+</div></div>
+        <div class="faq-a">Absolut! Ein eigenes Kapitel behandelt die Rechtslage für Mieter in DE und AT. Seit 2024 dürfen Vermieter Balkonkraftwerke kaum noch ablehnen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Wird der Guide aktualisiert?<div class="faq-icon">+</div></div>
+        <div class="faq-a">Der Guide ist auf dem Stand Mai 2026. Bei wichtigen Änderungen (neue Förderungen, Gesetzesänderungen) informieren wir registrierte Käufer per E-Mail.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>© 2026 photovoltaik-tipp.de &nbsp;·&nbsp; <a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="impressum.html">Datenschutz</a> &nbsp;·&nbsp; <a href="index.html">Zurück zur Website</a></p>
+  <p style="margin-top: 0.5rem; font-size: 0.72rem;">Dieser Guide ist ein digitales Produkt. Nach dem Kauf erhältst du einen Download-Link per E-Mail. Abwicklung über Digistore24.</p>
+</footer>
+
+<!-- ── STICKY BUY ── -->
+<div class="sticky-buy">
+  <div class="sticky-info">
+    <strong>Balkonkraftwerk Komplettguide 2026</strong>
+    10 Kapitel · DE & AT · Sofort-Download
+  </div>
+  <a href="#kaufen" class="sticky-btn">17 € – Jetzt kaufen ⚡</a>
+</div>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
