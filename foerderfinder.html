@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balkonkraftwerk Förderfinder 2026 – Alle Förderungen für DE & AT</title>
+<meta name="description" content="Kostenloser Balkonkraftwerk Förderfinder 2026: Finde alle aktuellen Förderungen für dein Bundesland oder deine österreichische Region – Zuschüsse bis zu 600 €.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky: #0369A1; --sky-dark: #0C4A6E; --sky-light: #E0F2FE;
+  --sun: #F59E0B; --sun-deep: #D97706; --sun-light: #FFFBEB;
+  --green: #059669; --green-light: #ECFDF5;
+  --ink: #0F1923; --ink-soft: #3D4D5C; --ink-muted: #6E8090;
+  --bg: #F8FAFC; --white: #fff; --border: #E2E8F0;
+  --radius: 14px; --radius-lg: 22px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+nav{background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{width:34px;height:34px;background:var(--sun);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);}
+.logo-text span{color:var(--sun);}
+
+.hero{background:linear-gradient(135deg,#0C4A6E,#0369A1);padding:3.5rem 1.5rem 3rem;text-align:center;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:white;margin-bottom:0.75rem;}
+.hero h1 em{font-style:italic;color:#FCD34D;}
+.hero p{color:rgba(255,255,255,0.75);font-size:1rem;max-width:560px;margin:0 auto 2rem;}
+
+/* LAND AUSWAHL */
+.country-tabs{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.country-tab{background:rgba(255,255,255,0.12);border:2px solid rgba(255,255,255,0.25);color:white;font-weight:700;font-size:1rem;padding:0.75rem 2rem;border-radius:50px;cursor:pointer;transition:all 0.2s;}
+.country-tab:hover{background:rgba(255,255,255,0.2);}
+.country-tab.active{background:var(--sun);border-color:var(--sun);color:var(--ink);}
+
+.main{max-width:1100px;margin:0 auto;padding:3rem 1.5rem 5rem;}
+
+/* BUNDESLAND / REGION AUSWAHL */
+.selector-box{background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2rem;text-align:center;}
+.selector-box h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--sky-dark);margin-bottom:1rem;}
+.region-grid{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;}
+.region-btn{background:var(--bg);border:1.5px solid var(--border);color:var(--ink-soft);font-size:0.85rem;font-weight:600;padding:0.5rem 1.1rem;border-radius:50px;cursor:pointer;transition:all 0.2s;font-family:'Sora',sans-serif;}
+.region-btn:hover{border-color:var(--sky);color:var(--sky);}
+.region-btn.active{background:var(--sky);border-color:var(--sky);color:white;}
+
+/* ERGEBNIS */
+.result-box{display:none;}
+.result-box.show{display:block;}
+
+.result-header{background:linear-gradient(135deg,#0C4A6E,#0369A1);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;}
+.result-header h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:white;}
+.result-header p{font-size:0.88rem;color:rgba(255,255,255,0.75);}
+
+.foerder-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;margin-bottom:2rem;}
+.foerder-card{background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;transition:box-shadow 0.2s;}
+.foerder-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.foerder-card.highlight{border-color:var(--sun);background:var(--sun-light);}
+.foerder-card.green{border-color:#6EE7B7;background:var(--green-light);}
+.foerder-badge{display:inline-flex;align-items:center;gap:5px;font-size:0.7rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:50px;margin-bottom:0.75rem;text-transform:uppercase;}
+.foerder-badge.aktiv{background:var(--green-light);color:var(--green);}
+.foerder-badge.pruefe{background:#FEF3C7;color:var(--sun-deep);}
+.foerder-badge.bundesweit{background:var(--sky-light);color:var(--sky);}
+.foerder-icon{font-size:1.8rem;margin-bottom:0.5rem;}
+.foerder-card h3{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;}
+.foerder-betrag{font-size:1.5rem;font-weight:800;color:var(--sky-dark);margin-bottom:0.5rem;}
+.foerder-betrag.green{color:var(--green);}
+.foerder-card p{font-size:0.85rem;color:var(--ink-soft);line-height:1.65;margin-bottom:1rem;}
+.foerder-link{display:inline-flex;align-items:center;gap:5px;font-size:0.82rem;font-weight:700;color:var(--sky);text-decoration:none;}
+.foerder-link:hover{color:var(--sky-dark);}
+
+.tip-box{background:var(--sun-light);border:1.5px solid #FDE68A;border-radius:var(--radius);padding:1.25rem 1.5rem;margin-top:1.5rem;}
+.tip-box h4{font-size:0.9rem;font-weight:700;color:var(--sun-deep);margin-bottom:0.4rem;}
+.tip-box p{font-size:0.85rem;color:var(--ink-soft);line-height:1.65;}
+
+.cta-box{background:linear-gradient(135deg,#0C4A6E,#0369A1);border-radius:var(--radius-lg);padding:2rem;text-align:center;margin-top:2rem;}
+.cta-box h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:white;margin-bottom:0.5rem;}
+.cta-box p{font-size:0.88rem;color:rgba(255,255,255,0.75);margin-bottom:1.25rem;}
+.btn-cta{display:inline-block;background:var(--sun);color:var(--ink);font-weight:800;font-size:0.95rem;padding:0.75rem 1.75rem;border-radius:12px;text-decoration:none;}
+
+footer{background:var(--ink);color:rgba(255,255,255,0.5);text-align:center;padding:2rem 1.5rem;font-size:0.8rem;}
+footer a{color:rgba(255,255,255,0.5);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">☀️</div>
+      <div class="logo-text">Photovoltaik<span>Tipp</span></div>
+    </a>
+    <a href="index.html" style="font-size:0.85rem;color:var(--ink-muted);text-decoration:none;">← Zur Startseite</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Balkonkraftwerk <em>Förderfinder</em> 2026</h1>
+  <p>Wähle dein Land und deine Region – wir zeigen dir alle aktuellen Förderungen und Zuschüsse.</p>
+  <div class="country-tabs">
+    <button class="country-tab active" onclick="setLand('de')">🇩🇪 Deutschland</button>
+    <button class="country-tab" onclick="setLand('at')">🇦🇹 Österreich</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- DEUTSCHLAND -->
+  <div id="section-de">
+    <div class="selector-box">
+      <h2>Welches Bundesland?</h2>
+      <div class="region-grid" id="bl-grid">
+        <button class="region-btn" onclick="showDE('alle', this)">Alle Bundesländer</button>
+        <button class="region-btn" onclick="showDE('bw', this)">Baden-Württemberg</button>
+        <button class="region-btn" onclick="showDE('by', this)">Bayern</button>
+        <button class="region-btn" onclick="showDE('be', this)">Berlin</button>
+        <button class="region-btn" onclick="showDE('bb', this)">Brandenburg</button>
+        <button class="region-btn" onclick="showDE('hb', this)">Bremen</button>
+        <button class="region-btn" onclick="showDE('hh', this)">Hamburg</button>
+        <button class="region-btn" onclick="showDE('he', this)">Hessen</button>
+        <button class="region-btn" onclick="showDE('mv', this)">Mecklenburg-Vorpommern</button>
+        <button class="region-btn" onclick="showDE('ni', this)">Niedersachsen</button>
+        <button class="region-btn" onclick="showDE('nw', this)">Nordrhein-Westfalen</button>
+        <button class="region-btn" onclick="showDE('rp', this)">Rheinland-Pfalz</button>
+        <button class="region-btn" onclick="showDE('sl', this)">Saarland</button>
+        <button class="region-btn" onclick="showDE('sn', this)">Sachsen</button>
+        <button class="region-btn" onclick="showDE('st', this)">Sachsen-Anhalt</button>
+        <button class="region-btn" onclick="showDE('sh', this)">Schleswig-Holstein</button>
+        <button class="region-btn" onclick="showDE('th', this)">Thüringen</button>
+      </div>
+    </div>
+
+    <div id="result-de" class="result-box"></div>
+  </div>
+
+  <!-- ÖSTERREICH -->
+  <div id="section-at" style="display:none;">
+    <div class="selector-box">
+      <h2>Welches Bundesland?</h2>
+      <div class="region-grid">
+        <button class="region-btn" onclick="showAT('alle', this)">Alle Bundesländer</button>
+        <button class="region-btn" onclick="showAT('w', this)">Wien</button>
+        <button class="region-btn" onclick="showAT('noe', this)">Niederösterreich</button>
+        <button class="region-btn" onclick="showAT('ooe', this)">Oberösterreich</button>
+        <button class="region-btn" onclick="showAT('stmk', this)">Steiermark</button>
+        <button class="region-btn" onclick="showAT('ktn', this)">Kärnten</button>
+        <button class="region-btn" onclick="showAT('sbg', this)">Salzburg</button>
+        <button class="region-btn" onclick="showAT('tir', this)">Tirol</button>
+        <button class="region-btn" onclick="showAT('vbg', this)">Vorarlberg</button>
+        <button class="region-btn" onclick="showAT('bgld', this)">Burgenland</button>
+      </div>
+    </div>
+
+    <div id="result-at" class="result-box"></div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 photovoltaik-tipp.de &nbsp;·&nbsp; <a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="index.html">Startseite</a></p>
+  <p style="margin-top:0.5rem;font-size:0.72rem;">Alle Angaben ohne Gewähr – Förderprogramme können sich kurzfristig ändern. Prüfe immer die offiziellen Quellen.</p>
+</footer>
+
+<script>
+// ── Daten ──────────────────────────────────────────────────
+
+const DE_BUNDESWEIT = [
+  {
+    icon: "⚡", title: "0 % Mehrwertsteuer",
+    betrag: "~19 % Ersparnis", klasse: "green",
+    badge: "bundesweit", badgeText: "Bundesweit aktiv",
+    text: "Seit 2023 gilt bundesweit 0 % MwSt. auf Kauf und Installation von Balkonkraftwerken, Modulen, Wechselrichtern und Speichern. Gilt automatisch – kein Antrag nötig.",
+    link: "https://www.bundesfinanzministerium.de", linkText: "Mehr Infos →"
+  },
+  {
+    icon: "🏦", title: "KfW Kredit 270",
+    betrag: "ab 1,02 % eff.", klasse: "",
+    badge: "bundesweit", badgeText: "Bundesweit aktiv",
+    text: "Günstige Finanzierung über die KfW-Bank für größere PV-Anlagen ab 1 kWp. Für reine Balkonkraftwerke meist nicht direkt relevant, aber für Kombinationen mit Speicher oder Wallbox.",
+    link: "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestandsimmobilie/Finanzierungsangebote/Erneuerbare-Energien-Standard-(270)/", linkText: "Zu KfW 270 →"
+  },
+  {
+    icon: "💶", title: "Einspeisevergütung",
+    betrag: "8,11 Ct/kWh", klasse: "",
+    badge: "bundesweit", badgeText: "Bundesweit aktiv",
+    text: "Überschüssigen Strom kannst du ins Netz einspeisen. Die Vergütung beträgt 2026 ca. 8,11 Cent pro kWh. Du brauchst einen Zweirichtungszähler – dein Netzbetreiber rüstet um.",
+    link: "https://www.bundesnetzagentur.de", linkText: "Mehr Infos →"
+  }
+];
+
+const DE_LAENDER = {
+  alle: { name: "Alle Bundesländer", extra: [] },
+  bw: {
+    name: "Baden-Württemberg",
+    extra: [
+      { icon: "🏛️", title: "Kommunale Förderungen", betrag: "bis 300 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Viele Gemeinden in BW fördern Balkonkraftwerke. Prüfe deine Gemeindewebsite oder das Förderprogramm deines lokalen Energieversorgers.", link: "https://www.energieportal-bw.de", linkText: "Energieportal BW →" }
+    ]
+  },
+  by: {
+    name: "Bayern",
+    extra: [
+      { icon: "🏛️", title: "Bayerisches Förderprogramm", betrag: "derzeit ausgeschöpft", klasse: "", badge: "pruefe", badgeText: "Prüfen", text: "Das bayerische Landesprogramm ist aktuell ausgeschöpft. Neue Mittel werden voraussichtlich 2026 bereitgestellt. Kommunale Förderungen (München 200 €) sind noch aktiv.", link: "https://www.stmwi.bayern.de", linkText: "Bayerisches Wirtschaftsministerium →" }
+    ]
+  },
+  be: {
+    name: "Berlin",
+    extra: [
+      { icon: "🏛️", title: "Berlin Solar", betrag: "bis 500 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv", text: "Berlin fördert Balkonkraftwerke mit bis zu 500 € Zuschuss über das Programm 'Berlin Solar'. Antrag vor dem Kauf stellen!", link: "https://www.berlin.de/sen/uvk/energie/", linkText: "Berlin Solar →" }
+    ]
+  },
+  bb: { name: "Brandenburg", extra: [
+    { icon: "🏛️", title: "Kommunale Förderungen", betrag: "variabel", klasse: "", badge: "pruefe", badgeText: "Regional prüfen", text: "Einzelne Gemeinden in Brandenburg fördern Balkonkraftwerke. Prüfe bei deiner Gemeinde oder dem lokalen Energieversorger.", link: "https://www.ilb.de", linkText: "Investitionsbank Brandenburg →" }
+  ]},
+  hb: { name: "Bremen", extra: [
+    { icon: "🏛️", title: "Bremer Energie Förderung", betrag: "bis 200 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Bremen bietet Förderungen für kleine PV-Anlagen. Prüfe das aktuelle Programm der Bremer Energie-Konsens.", link: "https://www.bremer-energie-konsens.de", linkText: "Energie-Konsens Bremen →" }
+  ]},
+  hh: { name: "Hamburg", extra: [
+    { icon: "🏛️", title: "Hamburg Klimaschutzförderung", betrag: "bis 200 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv", text: "Hamburg fördert Balkonkraftwerke über das Klimaschutzprogramm. Bis zu 200 € Zuschuss möglich.", link: "https://www.hamburg.de/klimaschutz", linkText: "Hamburg Klimaschutz →" }
+  ]},
+  he: { name: "Hessen", extra: [
+    { icon: "🏛️", title: "Hessisches Förderprogramm", betrag: "kommunal variabel", klasse: "", badge: "pruefe", badgeText: "Regional prüfen", text: "Hessen hat kein landesweites Programm für Balkonkraftwerke. Viele Kommunen (Frankfurt, Wiesbaden) haben eigene Programme.", link: "https://www.energieland.hessen.de", linkText: "Energieland Hessen →" }
+  ]},
+  mv: { name: "Mecklenburg-Vorpommern", extra: [
+    { icon: "🏛️", title: "Kommunale Förderungen", betrag: "variabel", klasse: "", badge: "pruefe", badgeText: "Regional prüfen", text: "Prüfe kommunale Förderungen bei deiner Gemeinde oder dem lokalen Energieversorger.", link: "https://www.regierung-mv.de", linkText: "Landesregierung MV →" }
+  ]},
+  ni: { name: "Niedersachsen", extra: [
+    { icon: "🏛️", title: "NBank Förderung", betrag: "bis 200 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Einzelne Kommunen in Niedersachsen fördern Balkonkraftwerke. Prüfe NBank oder deine Gemeindewebsite.", link: "https://www.nbank.de", linkText: "NBank Niedersachsen →" }
+  ]},
+  nw: { name: "Nordrhein-Westfalen", extra: [
+    { icon: "🏛️", title: "progres.nrw", betrag: "bis 500 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv", text: "NRW fördert Balkonkraftwerke über progres.nrw. Antrag VOR dem Kauf stellen! Kombinierbar mit kommunalen Programmen.", link: "https://www.progres.nrw.de", linkText: "progres.nrw →" }
+  ]},
+  rp: { name: "Rheinland-Pfalz", extra: [
+    { icon: "🏛️", title: "Kommunale Förderungen", betrag: "variabel", klasse: "", badge: "pruefe", badgeText: "Regional prüfen", text: "Rheinland-Pfalz hat kein landesweites Programm. Kommunale Förderungen bei der Gemeinde erfragen.", link: "https://www.ism.rlp.de", linkText: "Wirtschaftsministerium RLP →" }
+  ]},
+  sl: { name: "Saarland", extra: [
+    { icon: "🏛️", title: "Saarländische Klimaförderung", betrag: "bis 300 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Das Saarland fördert erneuerbare Energien für Privathaushalte. Prüfe das aktuelle Programm.", link: "https://www.saarland.de/mukmav", linkText: "Saarland Klimaschutz →" }
+  ]},
+  sn: { name: "Sachsen", extra: [
+    { icon: "🏛️", title: "SAB Förderung", betrag: "kommunal variabel", klasse: "", badge: "pruefe", badgeText: "Regional prüfen", text: "Sachsen fördert PV-Anlagen über die SAB. Für Balkonkraftwerke sind hauptsächlich kommunale Programme relevant.", link: "https://www.sab.de", linkText: "SAB Sachsen →" }
+  ]},
+  st: { name: "Sachsen-Anhalt", extra: [
+    { icon: "🏛️", title: "IB Sachsen-Anhalt", betrag: "variabel", klasse: "", badge: "pruefe", badgeText: "Regional prüfen", text: "Prüfe kommunale Förderungen sowie das IB-Förderprogramm für erneuerbare Energien.", link: "https://www.ib-sachsen-anhalt.de", linkText: "IB Sachsen-Anhalt →" }
+  ]},
+  sh: { name: "Schleswig-Holstein", extra: [
+    { icon: "🏛️", title: "IB.SH Förderung", betrag: "bis 200 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Schleswig-Holstein fördert erneuerbare Energien über die IB.SH. Kommunale Ergänzungen möglich.", link: "https://www.ib-sh.de", linkText: "IB.SH →" }
+  ]},
+  th: { name: "Thüringen", extra: [
+    { icon: "🏛️", title: "Thüringer Aufbaubank", betrag: "bis 300 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Thüringen fördert kleine PV-Anlagen. Prüfe das aktuelle Programm der Thüringer Aufbaubank.", link: "https://www.aufbaubank.de", linkText: "Thüringer Aufbaubank →" }
+  ]}
+};
+
+const AT_BUNDESWEIT = [
+  {
+    icon: "⚡", title: "0 % Mehrwertsteuer",
+    betrag: "~20 % Ersparnis", klasse: "green",
+    badge: "bundesweit", badgeText: "Bundesweit aktiv",
+    text: "Seit 2024 gilt österreichweit 0 % MwSt. auf PV-Anlagen, Wechselrichter und Balkonspeicher. Gilt automatisch – kein Antrag nötig.",
+    link: "https://www.bmf.gv.at", linkText: "BMF Österreich →"
+  },
+  {
+    icon: "🏛️", title: "Klimafonds – E-Mobilität & Solar",
+    betrag: "bis 600 €", klasse: "highlight",
+    badge: "pruefe", badgeText: "Neue Mittel erwartet",
+    text: "Das Förderprogramm des Klimafonds ist derzeit ausgeschöpft. Neue Mittel für 2026 sind angekündigt. Registriere dich auf eride.at für Benachrichtigungen!",
+    link: "https://www.eride.at", linkText: "eride.at →"
+  }
+];
+
+const AT_LAENDER = {
+  alle: { name: "Alle Bundesländer", extra: [] },
+  w: { name: "Wien", extra: [
+    { icon: "🏛️", title: "Wien – Wohnbauförderung Solar", betrag: "bis 500 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv", text: "Wien fördert Balkonkraftwerke über die Wohnbauförderung. Antrag beim MA 25 stellen. Kombinierbar mit Bundesförderung.", link: "https://www.wien.gv.at/wohnen/wohnbaufoerderung/", linkText: "Wien Wohnbauförderung →" }
+  ]},
+  noe: { name: "Niederösterreich", extra: [
+    { icon: "🏛️", title: "NÖ Energieförderung", betrag: "variabel", klasse: "", badge: "pruefe", badgeText: "Prüfen", text: "Niederösterreich fördert erneuerbare Energien. Prüfe das aktuelle Programm der NÖ Energie- und Umweltagentur.", link: "https://www.noe.gv.at/foerderungen", linkText: "NÖ Förderungen →" }
+  ]},
+  ooe: { name: "Oberösterreich", extra: [
+    { icon: "🏛️", title: "OÖ Wohnbauförderung", betrag: "bis 400 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Oberösterreich fördert PV-Anlagen über die Wohnbauförderung. Prüfe das aktuelle Programm.", link: "https://www.land-oberoesterreich.gv.at/foerderungen", linkText: "OÖ Förderungen →" }
+  ]},
+  stmk: { name: "Steiermark", extra: [
+    { icon: "🏛️", title: "Steirische Energieförderung", betrag: "bis 300 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Die Steiermark fördert erneuerbare Energien für Private. Prüfe das aktuelle Programm.", link: "https://www.efg.steiermark.at", linkText: "Energie Steiermark →" }
+  ]},
+  ktn: { name: "Kärnten", extra: [
+    { icon: "🏛️", title: "Kärntner Wohnbauförderung", betrag: "variabel", klasse: "", badge: "pruefe", badgeText: "Prüfen", text: "Kärnten fördert erneuerbare Energien über die Wohnbauförderung. Prüfe das aktuelle Programm.", link: "https://www.ktn.gv.at/foerderungen", linkText: "Kärnten Förderungen →" }
+  ]},
+  sbg: { name: "Salzburg", extra: [
+    { icon: "🏛️", title: "Salzburg – Solarförderung", betrag: "bis 400 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Salzburg fördert PV-Anlagen und Balkonspeicher. Prüfe das aktuelle Programm des Landes Salzburg.", link: "https://www.salzburg.gv.at/foerderungen", linkText: "Land Salzburg Förderungen →" }
+  ]},
+  tir: { name: "Tirol", extra: [
+    { icon: "🏛️", title: "Tiroler Wohnbauförderung", betrag: "variabel", klasse: "", badge: "pruefe", badgeText: "Prüfen", text: "Tirol fördert erneuerbare Energien über die Wohnbauförderung. Prüfe das aktuelle Programm.", link: "https://www.tirol.gv.at/foerderungen", linkText: "Tirol Förderungen →" }
+  ]},
+  vbg: { name: "Vorarlberg", extra: [
+    { icon: "🏛️", title: "Vorarlberg Energieförderung", betrag: "bis 300 €", klasse: "highlight", badge: "aktiv", badgeText: "Aktiv prüfen", text: "Vorarlberg fördert PV-Anlagen aktiv. Prüfe das Förderprogramm der Vorarlberger Landesregierung.", link: "https://www.vorarlberg.at/foerderungen", linkText: "Vorarlberg Förderungen →" }
+  ]},
+  bgld: { name: "Burgenland", extra: [
+    { icon: "🏛️", title: "Burgenland Energieförderung", betrag: "variabel", klasse: "", badge: "pruefe", badgeText: "Prüfen", text: "Burgenland fördert erneuerbare Energien. Prüfe das aktuelle Programm.", link: "https://www.burgenland.at/foerderungen", linkText: "Burgenland Förderungen →" }
+  ]}
+};
+
+// ── Logik ──────────────────────────────────────────────────
+
+let aktivLand = 'de';
+
+function setLand(land) {
+  aktivLand = land;
+  document.querySelectorAll('.country-tab').forEach((t,i) => t.classList.toggle('active', (land==='de'&&i===0)||(land==='at'&&i===1)));
+  document.getElementById('section-de').style.display = land==='de' ? 'block' : 'none';
+  document.getElementById('section-at').style.display = land==='at' ? 'block' : 'none';
+}
+
+function renderCards(cards) {
+  return cards.map(c => `
+    <div class="foerder-card ${c.klasse||''}">
+      <div class="foerder-badge ${c.badge}">${c.badgeText}</div>
+      <div class="foerder-icon">${c.icon}</div>
+      <h3>${c.title}</h3>
+      <div class="foerder-betrag ${c.klasse==='green'?'green':''}">${c.betrag}</div>
+      <p>${c.text}</p>
+      <a href="${c.link}" target="_blank" class="foerder-link">${c.linkText}</a>
+    </div>
+  `).join('');
+}
+
+function showDE(bl, el) {
+  document.querySelectorAll('#bl-grid .region-btn').forEach(b => b.classList.remove('active'));
+  if(el) el.classList.add('active');
+
+  const data = DE_LAENDER[bl];
+  const allCards = [...DE_BUNDESWEIT, ...(data.extra||[])];
+  const name = bl==='alle' ? 'Deutschland' : data.name;
+
+  document.getElementById('result-de').innerHTML = `
+    <div class="result-header">
+      <div>
+        <h2>🇩🇪 Förderungen: ${name}</h2>
+        <p>${allCards.length} Förderprogramme gefunden · Stand Mai 2026</p>
+      </div>
+    </div>
+    <div class="foerder-grid">${renderCards(allCards)}</div>
+    <div class="tip-box">
+      <h4>💡 Wichtiger Hinweis</h4>
+      <p>Stelle den Förderantrag immer <strong>VOR dem Kauf</strong>! Nachträgliche Anträge werden meist abgelehnt. Prüfe auch kommunale Förderungen bei deiner Gemeinde – viele Städte haben eigene Programme die sich mit Landesprogrammen kombinieren lassen.</p>
+    </div>
+    <div class="cta-box">
+      <h3>Alle Förderinfos im Komplettguide</h3>
+      <p>Unser PDF-Guide enthält alle Förderinfos für DE & AT – inkl. Checklisten und Schritt-für-Schritt Anleitungen.</p>
+      <a href="https://www.checkout-ds24.com/product/692958?coupon=SOLAR10" class="btn-cta" target="_blank">Guide für 17 € kaufen →</a>
+    </div>
+  `;
+  document.getElementById('result-de').classList.add('show');
+}
+
+function showAT(bl, el) {
+  document.querySelectorAll('#section-at .region-btn').forEach(b => b.classList.remove('active'));
+  if(el) el.classList.add('active');
+
+  const data = AT_LAENDER[bl];
+  const allCards = [...AT_BUNDESWEIT, ...(data.extra||[])];
+  const name = bl==='alle' ? 'Österreich' : data.name;
+
+  document.getElementById('result-at').innerHTML = `
+    <div class="result-header">
+      <div>
+        <h2>🇦🇹 Förderungen: ${name}</h2>
+        <p>${allCards.length} Förderprogramme gefunden · Stand Mai 2026</p>
+      </div>
+    </div>
+    <div class="foerder-grid">${renderCards(allCards)}</div>
+    <div class="tip-box">
+      <h4>💡 Wichtiger Hinweis</h4>
+      <p>Stelle den Förderantrag immer <strong>VOR dem Kauf</strong>! Der Klimafonds-Antrag muss vor Kauf und Installation gestellt werden. Registriere dich auf eride.at um sofort informiert zu werden wenn neue Mittel verfügbar sind.</p>
+    </div>
+    <div class="cta-box">
+      <h3>Alle Förderinfos im Komplettguide</h3>
+      <p>Unser PDF-Guide enthält alle Förderinfos für DE & AT – inkl. Checklisten und Schritt-für-Schritt Anleitungen.</p>
+      <a href="https://www.checkout-ds24.com/product/692958?coupon=SOLAR10" class="btn-cta" target="_blank">Guide für 17 € kaufen →</a>
+    </div>
+  `;
+  document.getElementById('result-at').classList.add('show');
+}
+
+// Standard anzeigen
+const firstBtn = document.querySelector('#bl-grid .region-btn');
+showDE('alle', firstBtn);
+</script>
+</body>
+</html>
